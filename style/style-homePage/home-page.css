@@ -1,7 +1,7 @@
 html,body{
   margin: 0;
   background-color: #4c5d70;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
 }
 .containerHome {
   background: linear-gradient(#11253d, #6a0066, #080064);
