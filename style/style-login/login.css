@@ -1,20 +1,6 @@
-
 /*Back*/
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-}
 
-#back-button {
-  position:absolute;
-  top: 1.2em;
-  left: 2em;
-  color: white;
-  padding: 5px;
-  border-radius: 2em;
-  background: linear-gradient(180deg, #156bcf, #1c011b, #156bcf);
-  z-index: 2;
-}
 
 /*.........LINHA 1..........*/
 .container {

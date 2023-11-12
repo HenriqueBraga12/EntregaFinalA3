@@ -4,11 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cadastro02</title>
+	<title>Cadastro 02</title>
+	<link rel="stylesheet" href="../style/styleGeral.css">
 	<link rel="stylesheet" href="../style/index.css">
 	<link rel="stylesheet" href="../style/style-cadastro/cadastro02.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+	<script src="../Js/index.js"></script>
 </head>
 
 <body>
@@ -19,6 +20,11 @@
 		</header>
 
 		<!-- LINHA 2 - RETORNAR HOME -->
+		<div class="returnHome">
+			<img onclick="home_page()" class="figureHome" src="../assets/casa.png" alt="casa">
+			<p>Início</p>
+		</div>
+
 		<!-- Inclua aqui o conteúdo da Retorno component -->
 
 		<!-- LINHA 3 - CRIAR CONTA -->
@@ -42,19 +48,42 @@
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>
+							<option value="AM">Amazonas</option>
 							<option value="BA">Bahia</option>
-							<!-- Adicione as demais opções do seu estado aqui -->
+							<option value="CE">Ceará</option>
+							<option value="DF">Distrito Federal</option>
+							<option value="ES">Espírito Santo</option>
+							<option value="GO">Goiás</option>
+							<option value="MA">Maranhão</option>
+							<option value="MT">Mato Grosso</option>
+							<option value="MS">Mato Grosso do Sul</option>
+							<option value="MG">Minas Gerais</option>
+							<option value="PA">Pará</option>
+							<option value="PB">Paraíba</option>
+							<option value="PR">Paraná</option>
+							<option value="PE">Pernambuco</option>
+							<option value="PI">Piauí</option>
+							<option value="RJ">Rio de Janeiro</option>
+							<option value="RN">Rio Grande do Norte</option>
+							<option value="RS">Rio Grande do Sul</option>
+							<option value="RO">Rondônia</option>
+							<option value="RR">Roraima</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="SP">São Paulo</option>
+							<option value="SE">Sergipe</option>
+							<option value="TO">Tocantins</option>
+							<option value="EX">Estrangeiro</option>
 						</select>
 					</div>
 					<div class="SelectInput">
-						<label for="dataNasc">Data nascimento</label>
-						<input type="date" class="dataNasc" />
+						<label for="dataNasc">Data de nascimento</label>
+						<input type="date" class="dataNasc" id="dataNasc"/>
 					</div>
 					<div class="containerButtons">
-						<a href="/Pag01" class="link">
+						<a href="cadastro01.html" class="link">
 							<button class="button1Pag2">Voltar</button>
 						</a>
-						<a href="/Pag03" class="link">
+						<a href="cadastro03.html" class="link">
 							<button class="button2Pag2">Avançar</button>
 						</a>
 					</div>
