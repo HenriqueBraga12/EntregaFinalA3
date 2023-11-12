@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+  </head>
+
+  <body>
+    <footer class='footer'>
+      <div class="boxContainer">
+        <div class="boxTexto">
+          <h2 class="titleSotero">Sotero</h2>
+          <h2 class="titleGames">Games</h2>
+        </div>
+        <figure id="fenixFooter">
+          <img alt="Img Whatsap" src={FenixFoot} class="fenixFooter" />
+        </figure>
+      </div>
+
+      <!--.....IMAGENS REDE SOCIAL.....-->
+
+      <Link target={"_blank"} class={styles.link} to="https://web.whatsapp.com/ ">
+      <figure class='whatsap'>
+        <img alt="Img Whatsap" src={Whatsapp} class="imgWhatsap" />
+        <figcaption>Whatsapp</figcaption>
+      </figure>
+      </Link>
+      <Link target={"_blank"} class={styles.link} to="https://pt-br.facebook.com/login/device-based/regular/login/ ">
+      <figure class='facebook'>
+        <img alt="Img Facebook" src={Facebook} class="imgFacebook" />
+        <figcaption>Facebook</figcaption>
+      </figure>
+      </Link>
+      <Link target={"_blank"} class={styles.link} to="https://is.gd/JIBGgr">
+      <figure class='email'>
+        <img alt="Img Email" src={Email} class="imgEmail" />
+        <figcaption>E-mail</figcaption>
+      </figure>
+      </Link>
+    </footer>
+  </body>
+
+</html>
