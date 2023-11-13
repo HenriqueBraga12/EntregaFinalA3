@@ -85,36 +85,6 @@ border:.5px #757575 solid;
 
 }
 
-/*.....BUTTONS.......*/
-
-div.containerButtons{
-display:flex;
-align-items: center;
-justify-content: space-evenly;
-margin:20px 0 0;
-}
-.button1, .button2{
-padding:5px 15px;
-font-size: clamp(1.2rem, .3rem + 1vw, 2rem); 
-border:none;
-border-radius: 5px;
-box-shadow: 1px 1px 3px #07070322;
-cursor:pointer;
-}
-.button1{
- background-color: #d5b3ff;
-}
-.button2{
-background-color: #99faff;
-}
-.button1:hover, .button2:hover{
-background-color: #87e5ffb1;
-}
-.button1:active, .button2:active{
- box-shadow: -.5px .5px 4px #07070322;
- transform:scale(.98);
- }
-
  /*........RESPONSIVIDADE.........*/
 
 @media screen and (max-width: 819px) {
