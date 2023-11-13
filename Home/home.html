@@ -8,9 +8,10 @@
  <link rel="stylesheet" href="/Styles/webHome.css">
  <link rel="stylesheet" href="/Styles/footer.css">
  <link rel="stylesheet" href="/Styles/mobileHome.css">
-
+ <script src="/Functions/myScript.js" type="text/javascript"></script>
 </head>
 <body>
+  
 <!--.............. HEADER MOBILE ..........-->
 <section id='containerMobile' >
   <figure id="fenixMobile">
@@ -21,34 +22,29 @@
 
   <!--...............MENU-BARRAS mobile...............-->
 
-  <div class="menuContainer">        
-      <figure class="menuBarra" >            
-        <img alt="Fenix" src="/Images/menuBar.png" class="menuBar"/> 
-      </figure>
-
-      <!--...............DROPDOWN mobile...............-->
-
-      <nav class="dropdown-menu">        
-        <!--........triângulo pontaMenu..........-->
-        <div class='pontaMenu'><span></span></div>
-            <h2 class="title-menu">MENU</h2>
-        <ul class='listaLinks'>  
-            <li class='MobileLink'>Fazer Login</li>
-          <a href="/Cadastro/Pag01.html">
-            <li class='MobileLink' >Seja membro</li>
-          </a>
-            <li class='MobileLink'>+jogos</li>
-        </ul>
-      </nav>
+  
+  <div id="menuContainer" > 
     
-    </div> 
+    <!--...............DROPDOWN mobile...............-->
+        <div class="dropdown-menu">
+              <figure class="menuBarra">            
+                <img alt="Menu Barras" src="/Images/menuBar.png" class="menuBar" onclick="myFunction()"/> 
+              </figure>          
+          <div class="dropdown-content" id="myDropdown">          
+              <a class='MobileLink' href="/Login/login.html">Fazer Login</a>
+              <a class='MobileLink' href="/Cadastro/Pag01.html">Seja membro</a>
+              <a class='MobileLink' href="#">+jogos</a>
+          </div>            
+        </div>
+  </div> 
+  
 </section><!--...fim containerMobile...-->
  
 <!--.............. HEADER WEB ............-->
 <div class="containerHome">
   <div class="containerDivs">
         <!--..........HEAD - LINKS..........-->
-       <div class="boxFenix">
+      <div class="boxFenix">
           <div class="soteroGames">
             <h1 class="sotero">Sotero</h1>
             <h1 class="games">Games</h1>
