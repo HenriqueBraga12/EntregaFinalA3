@@ -21,6 +21,7 @@
   <h1 class="text-sotero">Sotero Games</h1>
   
   <div id="menuContainer" >  <!--...MENU-mobile...-->  
+
       <div class="dropdown-menu"><!--...DROPDOWN mobile...-->
             <figure class="menuBarra">            
               <img alt="Menu Barras" src="/Images/menuBar.png" class="menuBar" onclick="myFunction()"/> 
@@ -31,15 +32,15 @@
             <a class='MobileLink' href="#" onclick="aviso()">+jogos</a>
         </div>            
       </div>
+
   </div> 
   
 </section><!--...fim HEADER-MOBILE...-->
  
 <!--.............. HEADER WEB ............-->
-
 <div class="containerHome">
   <div class="containerDivs">
-       <div class="boxFenix"><!--...LINKS...-->
+       <div class="boxFenix">
           <div class="soteroGames">
             <h1 class="sotero">Sotero</h1>
             <h1 class="games">Games</h1>
@@ -48,14 +49,19 @@
              <img alt="Fenix" src="/Images/fenixleft.png" class="fenixHome"/> 
           </figure>
        </div>
-         <!--.........TEXTOS NO HEADER.......-->
-        <div class="boxTextoEscolha">
+        <div class="boxTextoEscolha">  <!--...TEXTOS NO HEADER...-->
              <h3 class="textEscolha">Escolha seu jogo</h3>
         </div>
-        <div class="boxJogos">
-          <a class="nav-a" href="#" onclick="aviso()">
-             <h3 class="jogos">+Jogos</h3>
-          </a>
+        <!--............................-->
+        <div class="boxJogos" onclick="jogos()"> <!--..DROPDOWN...+JOGOS..-->       
+            <h3 class="jogos">+Jogos</h3>              
+            <div class="dropdownJogos" id="maisJogos">          
+                <a class='MobileLink' href="#">Jogado</a>
+                <a class='MobileLink' href="#">Zerado</a>
+                <a class='MobileLink' href="#">Jogando</a>
+                <a class='MobileLink' href="#">Opiniões</a>
+            </div> 
+        <!--............................-->
         </div>           
         <nav class="boxCadastroLogin">
           <a class="nav-a" href="/Cadastro/Pag01.html">
