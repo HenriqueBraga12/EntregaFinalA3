@@ -97,7 +97,7 @@ cursor: pointer;
 h3.jogos, h3.cadastre, h3.login{
  font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
  box-shadow: 1px 1px 3px #303030b6;
- padding:0; 
+ padding:10px; 
  margin:0;
  background-color: #88008399;
  color:#FFFFFF;
@@ -108,6 +108,7 @@ h3.jogos, h3.cadastre, h3.login{
 /*......Efeito ao sobrepor o mouse.........*/
 h3.jogos:hover, h3.cadastre:hover, h3.login:hover{
  color:#28f1ff;
+ background-color: #880083dc;
 }
 /*......Efeito ao clicar com o mouse.........*/
 h3.jogos:active, h3.cadastre:active, h3.login:active{
