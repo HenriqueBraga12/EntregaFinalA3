@@ -72,7 +72,42 @@ div.boxJogos{
  height:auto;
  margin:0;
  padding:0;
+ position:relative;
+ cursor:pointer;
 }
+/*.....DROPDOWN-JOGOS web.....*/
+.dropdownJogos{
+  position:absolute;
+  top: 55px;
+  position: absolute;
+  min-width: 160px;
+  height:auto; 
+  box-shadow: 0px 8px 16px 0px #00000033;
+  z-index: 1;
+  background-color: #100202;
+  display:none;
+}
+.dropdownJogos a {
+  float:none;
+  color: black;
+  padding: 5px 0;
+  margin:20px 10px; 
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: #e0ff98;
+  cursor:pointer;
+  font-size: clamp(0.875rem, 1rem + 0.5365vw, 1.5rem); 
+  text-align: center;
+  box-shadow:1px 1px 3px #454545;
+  color:#080064;
+  border-radius:7px;  
+}
+.game{
+  display:block; 
+  z-index: 1;
+}
+/*.....LOGIN.....*/
 nav.boxCadastroLogin{
  display:flex;  
  align-items: center;    
@@ -413,25 +448,69 @@ div.slideShow{
  } 
 
 /*..........ROW FOUR - IMAGENS LOGOS..........*/
+section#container-categoria{ /*.........CATEGORIAS.......*/
+  padding:0;
+  margin:10px;
+  max-width: 100%;
+  height:auto;  
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  }
+div.container-tipos{
+  padding:0;
+  width: 100%;
+  height:auto;
+  margin:0;
+  text-align: center;
+}
+h3.texto-categoria{
+  font-size: clamp(0.875rem, 1rem + 2vw, 1.5rem); 
+  padding:0;
+  margin:0 0 10px;
+  color:#fff;
+
+}
+div.container-tiposCatedoria{
+  padding:0;
+  margin:0;
+  width:100%;
+  height:auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+div.container-tiposCatedoria p{
+  padding:0 5px;
+  margin:0 auto 10px;
+  max-width:100%;
+  height:auto;
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.5rem); 
+  color:#e7e899;
+}
+/*.........................*/
 
 div.container-logos{
  background: linear-gradient( #4f5a706d, #197ea0, #0366c3);
- padding:20px;
+ padding:0;
  margin:0;
  max-width:100%;
- max-height: 100%;
- display:flex;
+ max-height: auo;
  border-top:1px dotted #afafaf8f;
+ box-sizing: border-box;
 }
-div.logos{
+
+div.logos{ /*.........container img logos.......*/
  display:grid;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
  align-items: center;
  justify-content: space-around;
  margin:auto;
  max-width:100%;
- max-height: 100%;
-}
+ max-height: auto;
+ }
 .logo-img{  
  max-width:100%;
  max-height: 100%;
@@ -441,18 +520,17 @@ div.logos{
  margin:auto;   
 }
 /*........... RESPONSIVIDADE LOGO...........*/
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 888px) {
  .logo-img{  
    max-width:100%;
    max-height: 100%;
-   padding:20px;
    width:110px;
    height: 110px;
    margin:auto;     
 }
 div.logos{
    display:grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr ;
    align-items: center;
    margin:auto;
  }
@@ -468,7 +546,7 @@ div.logos{
 }
 div.logos{
    display:grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr;
    align-items: center;
    margin:auto;
  }
@@ -484,21 +562,78 @@ div.logos{
 @media screen and (max-width: 613px) {
  div.logos{
    display:grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr ;
+   grid-template-columns: 1fr 1fr 1fr ;
    align-items: center;
    margin:auto;
  }
 }
-@media screen and (max-width: 541px) {
- .logo-img{ 
+@media screen and (max-width: 559px) {
+  section#container-categoria{ 
+    padding:0;
+    margin:0;
+    max-width: 100%;
+    height:auto;  
+    display:block;
+    justify-content: center;
+    }
+  div.container-tipos{
+    padding:5px;
+    width: 100%;
+    height:auto;
+    text-align:center;
+    display:block; 
+    }
+    div.container-tiposCatedoria{
+      padding:0;
+      margin:0;
+      max-width:100%;
+      height:auto;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+ 
+  .logo-img{ 
    padding:20px;
    width:75px;
    height: 75px;
    margin:auto;     
  }    
+ div.logos{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  align-items: center;
+  margin:auto;
 }
-@media screen and (max-width: 448px) {
- .logo-img{  
+
+}
+@media screen and (max-width: 542px) {
+  section#container-categoria{ 
+    padding:0;
+    margin:0;
+    max-width: 100%;
+    height:auto;  
+    display:block;
+    justify-content: center;
+    }
+  div.container-tipos{
+    padding:5px;
+    width: 100%;
+    height:auto;
+    text-align:center;
+    display:block; 
+    }
+    div.container-tiposCatedoria{
+      padding:0;
+      margin:0;
+      max-width:100%;
+      height:auto;
+      justify-content: center;
+      box-sizing: border-box;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+    }
+ 
+  .logo-img{  
    max-width:100%;
    max-height: 100%;
    padding:20px;

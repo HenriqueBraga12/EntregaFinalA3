@@ -18,13 +18,13 @@ function aviso(){
 }
 // ...DROPDOWN DE +JOGOS...............
 function jogos(){
-  document.getElementById("maisJogos").classList.toggle("mostrar");
+  document.getElementById("maisJogos").classList.toggle("game");
 }
 window.onclick = function(e) {
-  if (!e.target.matches('.boxJogos')) {
-  var dropdownJogos = document.getElementById("dropdownJogos");
-    if (dropdownJogos.classList.contains('mostrar')) {
-      dropdownJogos.classList.remove('mostrar');
+  if (!e.target.matches('.jogos')) {
+  let maisJogos = document.getElementById("maisJogos");
+    if (maisJogos.classList.contains('game')) {
+      maisJogos.classList.remove('game');
     }
   }
  }

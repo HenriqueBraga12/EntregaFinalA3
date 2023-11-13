@@ -53,16 +53,16 @@
              <h3 class="textEscolha">Escolha seu jogo</h3>
         </div>
         <!--............................-->
-        <div class="boxJogos" onclick="jogos()"> <!--..DROPDOWN...+JOGOS..-->       
-            <h3 class="jogos">+Jogos</h3>              
+        <div class="boxJogos" > <!--..DROPDOWN...+JOGOS..-->       
+            <h3 class="jogos" onclick="jogos()">+Jogos</h3>              
             <div class="dropdownJogos" id="maisJogos">          
-                <a class='MobileLink' href="#">Jogado</a>
-                <a class='MobileLink' href="#">Zerado</a>
-                <a class='MobileLink' href="#">Jogando</a>
-                <a class='MobileLink' href="#">Opiniões</a>
+                <a class='MobileLink' href="#" onclick="aviso()">Jogado</a>
+                <a class='MobileLink' href="#" onclick="aviso()">Zerado</a>
+                <a class='MobileLink' href="#" onclick="aviso()">Jogando</a>
+                <a class='MobileLink' href="#" onclick="aviso()">Opiniões</a>
             </div> 
-        <!--............................-->
-        </div>           
+        </div>   
+        <!--............................-->        
         <nav class="boxCadastroLogin">
           <a class="nav-a" href="/Cadastro/Pag01.html">
             <h3 class="cadastre" >Seja membro</h3>
@@ -96,8 +96,20 @@
        <img class="imgGame img_game4" alt="game4" src="/Images/jogo_4.png"/>
  </div>
     <!--..........ROW FOUR - IMAGENS LOGOS..........-->
- <div class='containerFilho container-logos'>
-   <div class='logos'>
+ <section id="container-categoria">
+    <div class="container-tipos">
+      <h3 class="texto-categoria">Categorias</h3>
+      <div class="container-tiposCatedoria">
+        <p>* Aventura</p>
+        <p>* Ficção</p>
+        <p>* Infantil</p>
+        <p>* Jogos</p>
+        <p>* Policial</p>
+      </div>
+    </div>
+ <div class='containerFilho container-logos'>  
+   <div class='logos'>      
+      
        <img alt="BARBIE" class="logo-img" src="/Images/barbie.png"/>
 
        <img alt="FARM" class="logo-img" src="/Images/big_farm.png"/>
@@ -119,7 +131,7 @@
        <img alt="SURF" class="logo-img" src="/Images/subway_surfers.png"/>
    </div>
  </div>
-
+</section>
 <!--...................... FOOTER......................-->
 <footer class='footer'>
   <div class="boxContainer">
