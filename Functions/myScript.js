@@ -6,7 +6,7 @@ function myFunction() {
 
 window.onclick = function(e) {
  if (!e.target.matches('.menuBar')) {
- var myDropdown = document.getElementById("myDropdown");
+ let myDropdown = document.getElementById("myDropdown");
    if (myDropdown.classList.contains('mostrar')) {
      myDropdown.classList.remove('mostrar');
    }
@@ -18,13 +18,25 @@ function aviso(){
 }
 // ...DROPDOWN DE +JOGOS...............
 function jogos(){
-  document.getElementById("maisJogos").classList.toggle("game");
+  document.getElementById("maisJogos").classList.toggle('game');
 }
 window.onclick = function(e) {
-  if (!e.target.matches('.jogos')) {
-  let maisJogos = document.getElementById("maisJogos");
+  if (!e.target.matches(".jogos")) {
+  let maisJogos = document.getElementById('maisJogos');
     if (maisJogos.classList.contains('game')) {
       maisJogos.classList.remove('game');
+    }
+  }
+ }
+
+ function carShop(){
+  document.getElementById("car").classList.toggle("mostre");
+}
+window.onclick = function(e) {
+  if (!e.target.matches('.carrinho')) {
+  let car = document.getElementById("car");
+    if (car.classList.contains('mostre')) {
+      car.classList.remove('mostre');
     }
   }
  }

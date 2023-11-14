@@ -19,7 +19,7 @@ margin:0;
 padding:20px 0;
 }
 
-/*..........HEAD - LINKS..........*/
+/*..........IMAGEN E TÍTULO HEADER..........*/
 div.boxFenix{
  display:flex;
  align-items: center;
@@ -46,36 +46,18 @@ figure.figFenixHeader{
 img.fenixHome{
  width: clamp(.5rem, 1rem + 6vw, 15rem); 
 }
-/*.........TEXTOS NO HEADER.......*/
-div.boxTextoEscolha{
- display:flex;
- align-items: center;
- justify-content: center;
- width: max-content;
- height:auto;
- margin:0;
- padding:0;
-}
-h3.textEscolha{
- font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
- color:#f2d4d4;  
- width: max-content;
- height:auto;
- margin:0;
- padding:0;
-}
-div.boxJogos{
- display:flex;
- align-items: center;
- justify-content: center;
- width: max-content;
- height:auto;
- margin:0;
- padding:0;
- position:relative;
- cursor:pointer;
-}
 /*.....DROPDOWN-JOGOS web.....*/
+div.boxJogos{  
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height:auto;
+  margin:0;
+  padding:0;
+  position:relative;
+  cursor:pointer;
+ }
 .dropdownJogos{
   position:absolute;
   top: 55px;
@@ -103,25 +85,19 @@ div.boxJogos{
   color:#080064;
   border-radius:7px;  
 }
-.game{
+.dropdownJogos a:hover{
+  background-color: #eefdc8;
+  color:#000000;
+}
+.dropdownJogos a:active{
+  transform:scale(.99);
+}
+.game{  /*......STYLE JAVA SCRIPT...*/
   display:block; 
   z-index: 1;
 }
-/*.....LOGIN.....*/
-nav.boxCadastroLogin{
- display:flex;  
- align-items: center;    
- justify-content: center;
- gap:0 50px;
- width: max-content;
- height:auto;
- margin:0;
- padding:0;
-}
 
-/*...........LINKS.............*/
-
-a.nav-a{
+a.nav-a{  /*...SEJA MEMBRO - LOGIN...*/
 text-decoration: none;
 display:block;
 margin:0;
@@ -138,6 +114,16 @@ h3.jogos, h3.cadastre, h3.login{
  letter-spacing: 2px;
  border-radius:4px;
 }
+nav.boxCadastroLogin{  /*.....LOGIN.....*/
+  display:flex;  
+  align-items: center;    
+  justify-content: center;
+  gap:0 50px;
+  width: max-content;
+  height:auto;
+  margin:0;
+  padding:0;
+ }
 
 /*......Efeito ao sobrepor o mouse.........*/
 h3.jogos:hover, h3.cadastre:hover, h3.login:hover{
@@ -159,7 +145,57 @@ h3.jogos:active, h3.cadastre:active, h3.login:active{
    display:none;
  } 
 }
+/*.........CARRINHO COMPRAS.......*/
+div.compra{
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ max-width: 100%;
+ height:auto;
+ margin:0;
+ padding:0;
+}
+.avisoCompra{  
+  text-align: center;
+  top:100px;
+  position:absolute;
+  padding:10px;
+  margin:0;
+  background-color: rgba(246, 246, 212, 0.708);
+  width:max-content;
+  height:auto;
+  display:none;
+}
+h4.text-avisoCompra{
+  font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
+  max-width:100%;
+  height:auto;  
+}
+.mostre{
+display:block;
+}
+.carrinho{
+  width: clamp(3rem, 2rem + 1vw, 3rem); 
+  cursor:pointer;
 
+}
+.carrinho2{
+  width: clamp(3rem, 1rem + 1vw, 2rem);
+  filter: drop-shadow(5px 5px 10px gray);  
+}
+p.produtos{
+  font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
+  margin:0;
+  padding:0;
+  max-width:100%;
+  height:auto;
+}
+/*.....RESPONSIVIDADE CARRINHO COMPRAS...*/
+@media screen and (max-width: 1376px) {  
+  .avisoCompra{ 
+    transform: translateX(-100px);
+  } 
+ }
 
 /*............IMG EFEITO DE FUNDO............*/
 
@@ -228,7 +264,6 @@ img.fenixEfeito {
  padding:0;
  animation:imgfnx 7s ease-in-out alternate , piscar 1s  3.2s linear infinite;
 }
-
 /*...........RESPONSIVIDADE IMAGEM FUNDO...............*/
 
 @media screen and (max-width: 2217px) {  
@@ -292,7 +327,6 @@ div.FundoEfeito{
 }
 
 /*...........RESPONSIVIDADE IMG EFEITO...........*/
-
 @media screen and (max-width: 1112px) {
  img.fenixEfeito {
  max-width:150px;
@@ -457,6 +491,7 @@ section#container-categoria{ /*.........CATEGORIAS.......*/
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  background-color: #000000;
   }
 div.container-tipos{
   padding:0;
@@ -467,11 +502,10 @@ div.container-tipos{
 }
 h3.texto-categoria{
   font-size: clamp(0.875rem, 1rem + 2vw, 1.5rem); 
-  padding:10px 0;
-  margin:0 0 10px;
+  padding:10px 0 10px 30px;
+  margin:0 0 10px 0;
   color:#fff;
-  background-color: #7abfff13
-
+  text-align:left;
 }
 div.container-tiposCatedoria{
   padding:15px 0;
@@ -479,25 +513,133 @@ div.container-tiposCatedoria{
   width:100%;
   height:auto;
   display:flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
-div.container-tiposCatedoria a{
+p.categoria-title{
   padding:0 5px;
   margin:0 auto 10px;
   max-width:100%;
   height:auto;
-  font-size: clamp(0.875rem, 1rem + 1vw, 1.7rem); 
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.6rem); 
   color:#e7e899;
   text-decoration: none;
   cursor:pointer;
 }
-div.container-tiposCatedoria a:hover{
+div.container-tiposCatedoria p:hover{
  color:yellow;
- transform:scale(1.1);
 }
-/*.........................*/
+/*.......Lista de jogos..........*/
+ul, li{
+  list-style: none;  
+}
+.ul-geral{
+ padding:0;
+ margin:0;
+ width:100%;
+ height:auto;
+ position:relative;
+}
+.li-geral{
+  display:flex;
+  margin:0 auto;
+  padding-bottom: 10px;
+  width:max-content;
+  height:auto;
+  align-items: center;
+  justify-content: space-between; 
+}
+.ul-filho{
+  text-align: left;
+  top:45px;
+  left:20px;
+  margin:auto;
+  padding:10px;
+  border:1px dotted #f3ff6e9f;
+  border-radius:10px;
+  max-width:100%;  
+  position:absolute;
+  background-color: #8fffdad5;
+  height:auto;
+  opacity:0;
+  visibility: hidden; 
+  transition:height 1s ease, opacity 1s ease, visibility 5ms ease;
+}
+.li-filho{
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.4rem); 
+  padding:5px;
+  margin:10px auto;
+  width:100%;
+  height:auto;
+  border-radius:5px;
+  color:#053428; 
+  box-sizing: border-box;
+}
+  .li-filho a{
+    text-decoration: none;
+    display:block;
+    max-width: 100%;
+    height:auto;
+    padding:0;
+    margin:0;
+}
+.li-filho a:hover{
+  color:#000000;
+  text-shadow: rgb(255, 168, 168);
+}
+.li-geral:hover .ul-filho{  
+  opacity:1;
+  visibility: visible;
+  height:max-content;
+}
+.li-filho:first-child{
+  margin:0 0 10px 0;
+}
+.li-filho:last-child{
+  margin:10px 0 0 0;
+}
+/*.......Categorias jogos MOBILE..........*/
+div.categoria-responsiva{
+  width:max-content;
+  height:auto;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  display:none;
+}
+h4.categoria-title{  
+  padding:0 5px;
+  margin:0 auto 10px;
+  max-width:100%;
+  height:auto;
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.3rem); 
+  color:#e7e899;
+  text-decoration: none;
+  cursor:pointer;
+}
+div.container-p{
+  margin:0 0 0 5px;
+  padding:0 5px;
+  max-width: 100%;
+  height:auto;
+  border:1px dotted #f3ff6e9f;
+  border-radius:10px;
+  text-align: left;
+}
+.p-filho{
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.2rem); 
+  width:100%;
+  height:auto;
+  margin:20px 0;
+  padding:5px;
+  border-radius:5px;
+  color:#12ffc4;
+  background-color: rgba(255, 255, 143, 0.149)
+}
+/*.........IMAGEM LOGOTIPO JOGOS................*/
 
 div.container-logos{
  background: linear-gradient( #4f5a706d, #197ea0, #0366c3);
@@ -507,6 +649,13 @@ div.container-logos{
  max-height: auo;
  border-top:1px dotted #afafaf8f;
  box-sizing: border-box;
+}
+h3.classico{
+  font-size: clamp(0.875rem, 1rem + 2vw, 1.5rem); 
+  padding:10px 0 10px 30px;
+  margin:20px 0 10px 0;
+  color:#fff;
+  text-align:left;
 }
 
 div.logos{ /*.........container img logos.......*/
@@ -526,7 +675,56 @@ div.logos{ /*.........container img logos.......*/
  height: 120px;
  margin:auto;   
 }
-/*........... RESPONSIVIDADE LOGO...........*/
+/*........... RESPONSIVIDADE JOGOS...........*/
+
+@media screen and (max-width:1072px){
+  div.container-tiposCatedoria{
+    display:none;
+  }
+  div.categoria-responsiva{
+    width:max-content;
+    height:auto;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  p.p-filho{
+    padding:5px 0;
+    margin:0;
+    max-width:max-content;
+    height:auto;
+    color:#12ffc4;
+  }
+}
+@media screen and (max-width:993px){
+  div.categoria-responsiva{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+  }
+}
+@media screen and (max-width:743px){
+  div.categoria-responsiva{    
+    grid-template-columns: 1fr 1fr;    
+  }
+}
+@media screen and (max-width:542px){
+  div.categoria-responsiva{   
+    grid-template-columns: 1fr 1fr;    
+  }
+  p.p-filho{  
+    font-size: clamp(0.875rem, 1rem + 1vw, 1rem);       
+  }
+}
+@media screen and (max-width:427px){
+  div.categoria-responsiva{   
+    grid-template-columns: 1fr;    
+  }
+  p.p-filho{  
+    font-size: clamp(0.875rem, 1rem + 1vw, 1rem);       
+  }
+}
 @media screen and (max-width: 888px) {
  .logo-img{  
    max-width:100%;
@@ -535,6 +733,7 @@ div.logos{ /*.........container img logos.......*/
    height: 110px;
    margin:auto;     
 }
+
 div.logos{
    display:grid;
    grid-template-columns: 1fr 1fr 1fr ;
@@ -575,30 +774,6 @@ div.logos{
  }
 }
 @media screen and (max-width: 559px) {
-  section#container-categoria{ 
-    padding:0;
-    margin:0;
-    max-width: 100%;
-    height:auto;  
-    display:block;
-    justify-content: center;
-    }
-  div.container-tipos{
-    padding:5px;
-    width: 100%;
-    height:auto;
-    text-align:center;
-    display:block; 
-    }
-    div.container-tiposCatedoria{
-      padding:0;
-      margin:0;
-      max-width:100%;
-      height:auto;
-      justify-content: center;
-      box-sizing: border-box;
-    }
- 
   .logo-img{ 
    padding:20px;
    width:75px;
@@ -614,32 +789,6 @@ div.logos{
 
 }
 @media screen and (max-width: 542px) {
-  section#container-categoria{ 
-    padding:0;
-    margin:0;
-    max-width: 100%;
-    height:auto;  
-    display:block;
-    justify-content: center;
-    }
-  div.container-tipos{
-    padding:5px;
-    width: 100%;
-    height:auto;
-    text-align:center;
-    display:block; 
-    }
-    div.container-tiposCatedoria{
-      padding:0;
-      margin:0;
-      max-width:100%;
-      height:auto;
-      justify-content: center;
-      box-sizing: border-box;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr ;
-    }
- 
   .logo-img{  
    max-width:100%;
    max-height: 100%;
