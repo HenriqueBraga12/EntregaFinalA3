@@ -40,38 +40,47 @@
 <!--.............. HEADER WEB ............-->
 <div class="containerHome">
   <div class="containerDivs">
-       <div class="boxFenix">
-          <div class="soteroGames">
-            <h1 class="sotero">Sotero</h1>
-            <h1 class="games">Games</h1>
-          </div>
-          <figure class="figFenixHeader">
-             <img alt="Fenix" src="/Images/fenixleft.png" class="fenixHome"/> 
-          </figure>
-       </div>
-        <div class="boxTextoEscolha">  <!--...TEXTOS NO HEADER...-->
-             <h3 class="textEscolha">Escolha seu jogo</h3>
+     <div class="boxFenix">
+        <div class="soteroGames">
+          <h1 class="sotero">Sotero</h1>
+          <h1 class="games">Games</h1>
         </div>
-        <!--............................-->
-        <div class="boxJogos" > <!--..DROPDOWN...+JOGOS..-->       
-            <h3 class="jogos" onclick="jogos()">+Jogos</h3>              
-            <div class="dropdownJogos" id="maisJogos">          
-                <a class='MobileLink' href="#" onclick="aviso()">Jogado</a>
-                <a class='MobileLink' href="#" onclick="aviso()">Zerado</a>
-                <a class='MobileLink' href="#" onclick="aviso()">Jogando</a>
-                <a class='MobileLink' href="#" onclick="aviso()">Opiniões</a>
-            </div> 
-        </div>   
-        <!--............................-->        
-        <nav class="boxCadastroLogin">
-          <a class="nav-a" href="/Cadastro/Pag01.html">
-            <h3 class="cadastre" >Seja membro</h3>
-          </a>
-          <a class="nav-a" href="/Login/login.html">
-            <h3 class="login" >Login</h3>
-          </a>
-         </nav>
-    </div>   
+        <figure class="figFenixHeader">
+           <img alt="Fenix" src="/Images/fenixleft.png" class="fenixHome"/> 
+        </figure>
+     </div>      
+      <!--............................-->
+      <div class="boxJogos" > <!--..DROPDOWN...+JOGOS..-->       
+          <h3 class="jogos" onclick="jogos()">+Jogos</h3>              
+          <div class="dropdownJogos" id="maisJogos">          
+              <a class='MobileLink' href="#" onclick="aviso()">Jogado</a>
+              <a class='MobileLink' href="#" onclick="aviso()">Zerado</a>
+              <a class='MobileLink' href="#" onclick="aviso()">Jogando</a>
+              <a class='MobileLink' href="#" onclick="aviso()">Opiniões</a>
+          </div> 
+      </div>   
+      <!--............................-->        
+      <nav class="boxCadastroLogin">
+        <a class="nav-a" href="/Cadastro/Pag01.html">
+          <h3 class="cadastre" >Seja membro</h3>
+        </a>
+        <a class="nav-a" href="/Login/login.html">
+          <h3 class="login" >Login</h3>
+        </a>
+      </nav>
+      <!--.............CARRINHO COMPRAS.......-->
+      <div class="compra">
+        <img class="carrinho" src="/Images/car-shop.png" alt="Carro compra" onclick="carShop()">
+        <div class="avisoCompra" id="car">
+        <h4 class="text-avisoCompra">
+          Não há nada no carrinho.<br>
+          Deixe de ser mão de figa!
+        </h4>
+        <img class="carrinho2" src="/Images/car-shop.png" alt="Carro compra"/>
+        <p class="produtos">0 produtos</p>
+      </div>
+   </div>
+  </div>   
 </div>
  <!--............IMG EFEITO FENIX............-->
 
@@ -99,17 +108,96 @@
  <section id="container-categoria">
     <div class="container-tipos">
       <h3 class="texto-categoria">Categorias</h3>
-      <div class="container-tiposCatedoria">
-        <a href="#" onclick="aviso()">Aventura</a>
-        <a href="#" onclick="aviso()">Ficção</a>
-        <a href="#" onclick="aviso()">Infantil</a>
-        <a href="#" onclick="aviso()">Jogos</a>
-        <a href="#" onclick="aviso()">Policial</a>
+      <div class="container-tiposCatedoria"><!--..Categorias...-->
+        <ul class="ul-geral">
+          <li class="li-geral">
+            <p class="categoria-title">Aventura</p>
+            <ul class="ul-filho">
+              <li class="li-filho"><a href="#" onclick="aviso()">Death Stranding</a></li>
+              <li class="li-filho"><a href="#" onclick="aviso()">The Elder Scrolls V: Skyrim</a></li>
+              <li class="li-filho"><a href="#" onclick="aviso()">Don’t Starve Together</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="ul-geral">
+          <li class="li-geral">
+            <p class="categoria-title">Ficção</p>
+            <ul class="ul-filho">
+              <li class="li-filho"><a href="#" onclick="aviso()">Death Stranding</a></li>
+              <li class="li-filho"><a href="#" onclick="aviso()">The Elder Scrolls V: Skyrim</a></li>
+              <li class="li-filho"><a href="#" onclick="aviso()">Don’t Starve Together</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="ul-geral">
+          <li class="li-geral">
+              <p class="categoria-title">Infantil</p>
+              <ul class="ul-filho">
+                <li class="li-filho"><a href="#" onclick="aviso()">Death Stranding</a></li>
+                <li class="li-filho"><a href="#" onclick="aviso()">The Elder Scrolls V: Skyrim</a></li>
+                <li class="li-filho"><a href="#" onclick="aviso()">Don’t Starve Together</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="ul-geral">
+            <li class="li-geral">
+              <p class="categoria-title">Jogos</p>
+              <ul class="ul-filho">
+                <li class="li-filho"><a href="#" onclick="aviso()">Death Stranding</a></li>
+                <li class="li-filho"><a href="#" onclick="aviso()">The Elder Scrolls V: Skyrim</a></li>
+                <li class="li-filho"><a href="#" onclick="aviso()">Don’t Starve Together</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="ul-geral">
+            <li class="li-geral">
+              <p class="categoria-title">Policial</p>
+              <ul class="ul-filho">
+                <li class="li-filho"><a href="#" onclick="aviso()">Death Stranding</a></li>
+                <li class="li-filho"><a href="#" onclick="aviso()">The Elder Scrolls V: Skyrim</a></li>
+                <li class="li-filho"><a href="#" onclick="aviso()">Don’t Starve Together</a></li>
+              </ul>
+            </li>
+          </ul> 
+      </div>
+      <!--...........CATEGORIA JOGOS - MOBILE.................-->
+      <div class="categoria-responsiva">        
+          <div class="container-p">
+            <h4 class="categoria-title">Aventura</h4>
+            <p class="p-filho">Death Stranding</p>
+            <p class="p-filho">The Elder Scrolls V: Skyrim</p>
+            <p class="p-filho">Don’t Starve Together</p>
+          </div>
+          <div class="container-p">
+            <h4 class="categoria-title">Ficção</h4>
+            <p class="p-filho">Death Stranding</p>
+            <p class="p-filho">The Elder Scrolls V: Skyrim</p>
+            <p class="p-filho">Don’t Starve Together</p>
+          </div>          
+          <div class="container-p">
+            <h4 class="categoria-title">Infantil</h4>
+            <p class="p-filho">Death Stranding</p>
+            <p class="p-filho">The Elder Scrolls V: Skyrim</p>
+            <p class="p-filho">Don’t Starve Together</p>
+          </div>
+          <div class="container-p">
+            <h4 class="categoria-title">Jogos</h4>
+            <p class="p-filho">Death Stranding</p>
+            <p class="p-filho">The Elder Scrolls V: Skyrim</p>
+            <p class="p-filho">Don’t Starve Together</p>
+          </div>          
+          <div class="container-p">
+            <h4 class="categoria-title">Policial</h4>
+            <p class="p-filho">Death Stranding</p>
+            <p class="p-filho">The Elder Scrolls V: Skyrim</p>
+            <p class="p-filho">Don’t Starve Together</p>
+          </div>
       </div>
     </div>
- <div class='containerFilho container-logos'>  
-   <div class='logos'>      
-      
+    <!--.......IMAGEN LOGOTIPO JOGOS.......-->
+ <div class='container-logos'>  
+  <h3 class="classico">Clássicos</h3>
+   <div class='logos'> 
        <img alt="BARBIE" class="logo-img" src="/Images/barbie.png"/>
 
        <img alt="FARM" class="logo-img" src="/Images/big_farm.png"/>
