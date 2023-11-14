@@ -1,0 +1,98 @@
+/*.........LINHA 3 - CRIAR CONTA................*/
+
+div.formContainer3{     
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin: auto;
+ padding:0;
+ width: 50%;
+ height: auto;
+ box-shadow: 1px 1px 3px #333333;
+}
+header.perfil{
+ background-color: #02004B;
+ display:flex;
+ width:100%;
+ height: auto;
+ align-items: center;
+ justify-content: center;
+ box-sizing: border-box;
+ position:relative;
+}
+h2.textPerfil{
+  padding:0;
+  margin:15px 0;
+  width: 100%;
+  height:auto;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: clamp(1.2rem, 1rem + 1.4vw, 2rem);    
+}
+
+/*.........AVISO DADOS...........*/
+div.avisoDados3{
+background-color: #D9D9D9;
+width: 100%;
+height: auto;
+box-sizing: border-box;
+text-align: center;
+margin:0;
+padding:15px 40px;
+color:#5d5d5d;
+}
+div.avisoDados3 p{
+margin:0;
+padding:0;
+max-width: 100%;
+height:auto;
+font-size: clamp(1rem, .6rem + 1vw, 2rem); 
+}
+/*.........FORMULÁRIO....................*/
+div.cadastrar3{
+ width: 100%;
+ max-height:auto; 
+ border:1px solid #fff;   
+ margin:0;
+ padding:0;
+ background-color: #FAFFE5;
+ box-sizing: border-box;
+} 
+.formPag3{
+background-color: #edffa75c;
+width:100%;
+height:auto;
+margin:0;
+padding:10px 0;
+box-sizing: border-box;
+}
+div.Input3{
+display:flex;
+flex-direction: column;
+width: 80%;
+margin:10px auto;
+}
+
+form.formPag3 label{
+color:#000;
+margin: 10px 0 3px;
+font-size: clamp(1rem, .3rem + 1vw, 2rem); 
+}
+input.Jogador, input.email{
+padding:8px 0;
+border:.5px #757575 solid;
+
+}
+
+ /*........RESPONSIVIDADE.........*/
+
+@media screen and (max-width: 819px) {
+ div.formContainer3{ 
+   width: 80%;
+   margin:30px 0 0;
+    } 
+    h2.textPerfil{
+      padding:0 50px 0 0;
+}
+}
