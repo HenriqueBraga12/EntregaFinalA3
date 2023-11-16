@@ -144,57 +144,7 @@ h3.jogos:active, h3.cadastre:active, h3.login:active{
    display:none;
  } 
 }
-/*.........CARRINHO COMPRAS.......*/
-div.compra{
- display:flex;
- align-items: center;
- justify-content: center;
- max-width: 100%;
- height:auto;
- margin:0;
- padding:0;
-}
-.avisoCompra{  
-  text-align: center;
-  top:100px;
-  position:absolute;
-  padding:10px;
-  margin:0;
-  background-color: rgba(246, 246, 212, 0.708);
-  width:max-content;
-  height:auto;
-  display:none;
-}
-h4.text-avisoCompra{
-  font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
-  max-width:100%;
-  height:auto;  
-}
-.mostre{
-display:block;
-}
-.carrinho{
-  width: clamp(3rem, 2rem + 1vw, 3rem); 
-  cursor:pointer;
 
-}
-.carrinho2{
-  width: clamp(3rem, 1rem + 1vw, 2rem);
-  filter: drop-shadow(5px 5px 10px gray);  
-}
-p.produtos{
-  font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
-  margin:0;
-  padding:0;
-  max-width:100%;
-  height:auto;
-}
-/*.....RESPONSIVIDADE CARRINHO COMPRAS...*/
-@media screen and (max-width: 1376px) {  
-  .avisoCompra{ 
-    transform: translateX(-100px);
-  } 
- }
 
 /*............IMG EFEITO DE FUNDO............*/
 
