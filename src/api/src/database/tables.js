@@ -2,13 +2,18 @@ import { handleDatabaseQuery } from "../functions/handleDatabaseQuery.js";
 
 export const createTables = (database) => {
   database.query(
+    "CREATE DATABASE IF NOT EXISTS `sotero_db`",
+    handleDatabaseQuery
+  );
+
+  database.query(
     `
 		  CREATE TABLE IF NOT EXISTS sotero_db.users (
 			id varchar(40) PRIMARY KEY NOT NUll,
 			first_name varchar(60) NOT NULL,
 			last_name varchar(60),
 			user_name varchar(60) NOT NULL,
-			email varchar(60) NOT NULL,
+			email varchar(60) UNIQUE NOT NULL,
 			password varchar(60) NOT NULL,   
 			has_accepted_use_terms varchar(60) NOT NULL
 		  );
@@ -20,7 +25,7 @@ export const createTables = (database) => {
     `
 		  CREATE TABLE IF NOT EXISTS sotero_db.games_platforms (
 			id varchar(40) PRIMARY KEY NOT NUll,
-			name varchar(60) NOT NULL,
+			name varchar(60) UNIQUE NOT NULL,
 			iconURL varchar(255)
 		  );
 		`,
@@ -31,7 +36,7 @@ export const createTables = (database) => {
     `
 		  CREATE TABLE IF NOT EXISTS sotero_db.games (
 			id varchar(40) PRIMARY KEY NOT NUll,
-			name varchar(60) NOT NULL,
+			name varchar(60) UNIQUE NOT NULL,
 			game_platform_id varchar(60) NOT NULL REFERENCES sotero_db.games_flatforms(id),
 			release_date varchar(255),
 			abstract varchar(255),
@@ -46,7 +51,7 @@ export const createTables = (database) => {
     `
 		  CREATE TABLE IF NOT EXISTS sotero_db.games_categories (
 			id varchar(40) PRIMARY KEY NOT NUll,
-			name varchar(60) NOT NULL
+			name varchar(60) UNIQUE NOT NULL
 		  );
 		`,
     handleDatabaseQuery
