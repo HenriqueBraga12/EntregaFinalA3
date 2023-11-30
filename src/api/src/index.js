@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 
-import { initDatabase } from "./database/config.js";
+import { initDatabase } from "./database/init.js";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
