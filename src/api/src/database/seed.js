@@ -26,28 +26,42 @@ export const execSeeds = (database) => {
 		INSERT INTO sotero_db.games_platforms (id, name) VALUES 
 			("de92a24f-f2dd-4601-b6ec-dc99806020af", "Steam"), ("d1b55f0d-bca0-410a-a7d9-3a6ae9ab2af8", "Epic Games"), ("61587f06-92bf-4ac3-8903-7d4d9322a482", "Blizzard.net"), ("0d253925-2fa0-4190-abba-fc42795b40c1", "GOG"), ("a52dbb5d-87ee-4751-bfd3-fd6086e0098c", "PSN"), ("ea761c19-e959-4475-baf0-de5072871dfd", "Xbox"), ("7fda470b-ffdd-4b05-81f4-e23a932358c2", "Origin"), 
       ("2a8205c2-26bf-469e-bef1-0db0f7e611d1", "Ubisoft"), 
-      ("a6f3a431-e816-456c-aabe-14975244d5fc", "PS2"), ("30be723d-1f0a-42fa-bdf4-ef39eae76b7b", "Nintendo");
+      ("a6f3a431-e816-456c-aabe-14975244d5fc", "PS2"), ("30be723d-1f0a-42fa-bdf4-ef39eae76b7b", "Nintendo"),("4c2d2e67-42be-4646-b1bd-8900510ca5b4", "Riot Games");
 	`,
     handleDatabaseQuery
   );
 
   database.query(
     `
-		INSERT INTO sotero_db.games_platforms (id, name) VALUES 
-			("de92a24f-f2dd-4601-b6ec-dc99806020af", "Steam"), ("d1b55f0d-bca0-410a-a7d9-3a6ae9ab2af8", "Epic Games"), ("61587f06-92bf-4ac3-8903-7d4d9322a482", "Blizzard.net"), ("0d253925-2fa0-4190-abba-fc42795b40c1", "GOG"), ("a52dbb5d-87ee-4751-bfd3-fd6086e0098c", "PSN"), ("ea761c19-e959-4475-baf0-de5072871dfd", "Xbox"), ("7fda470b-ffdd-4b05-81f4-e23a932358c2", "Origin"), 
-      ("2a8205c2-26bf-469e-bef1-0db0f7e611d1", "Ubisoft"), 
-      ("a6f3a431-e816-456c-aabe-14975244d5fc", "PS2"), ("30be723d-1f0a-42fa-bdf4-ef39eae76b7b", "Nintendo");
+		INSERT INTO sotero_db.games (id, name) VALUES 
+			("1b2a7262-c799-4999-989a-96bda254edfc", "League of Legends"), ("c8ed4bde-acf6-4f4c-a528-e5e426b36d61", "Valorant"), ("7b1918ed-9559-4706-a4c1-417eaadd3761", "Dota 2"), ("2b27853c-0cab-41cb-b134-34bd43b95269", "Call of Duty: Modern Warfare"), ("0003f258-800d-4ee7-bab0-9b6eb0a4458e", "Forza Motorsport"), ("35a8bc90-d13f-4b29-977d-285f39139696", "American Truck Simulator"), ("7fea46b3-f6e7-4587-b1f1-9964bce29780", "Assetto Corsa Competizione"), 
+      ("04f04057-c410-4db2-abe6-be87bacc9068", "Grand Theft Auto IV"), 
+      ("383826da-c7b8-45ba-8ff7-2da3a7d0e1da", "The Division 2"), ("cb9f8233-8052-466f-ad00-96cf32379b0b", "Counter Strike: Global Ofensive 2");
 	`,
     handleDatabaseQuery
   );
 
   database.query(
     `
-		INSERT INTO sotero_db.games_platforms (id, name) VALUES 
-			("de92a24f-f2dd-4601-b6ec-dc99806020af", "Steam"), ("d1b55f0d-bca0-410a-a7d9-3a6ae9ab2af8", "Epic Games"), ("61587f06-92bf-4ac3-8903-7d4d9322a482", "Blizzard.net"), ("0d253925-2fa0-4190-abba-fc42795b40c1", "GOG"), ("a52dbb5d-87ee-4751-bfd3-fd6086e0098c", "PSN"), ("ea761c19-e959-4475-baf0-de5072871dfd", "Xbox"), ("7fda470b-ffdd-4b05-81f4-e23a932358c2", "Origin"), 
-      ("2a8205c2-26bf-469e-bef1-0db0f7e611d1", "Ubisoft"), 
-      ("a6f3a431-e816-456c-aabe-14975244d5fc", "PS2"), ("30be723d-1f0a-42fa-bdf4-ef39eae76b7b", "Nintendo");
+		INSERT INTO sotero_db.game_games_plataforms (id, game_id, game_platform_id) VALUES 
+      ("${uuidv4()}","1b2a7262-c799-4999-989a-96bda254edfc", "4c2d2e67-42be-4646-b1bd-8900510ca5b4"), ("${uuidv4()}","c8ed4bde-acf6-4f4c-a528-e5e426b36d61", "4c2d2e67-42be-4646-b1bd-8900510ca5b4"), ("${uuidv4()}","7b1918ed-9559-4706-a4c1-417eaadd3761", "de92a24f-f2dd-4601-b6ec-dc99806020af"), ("${uuidv4()}","2b27853c-0cab-41cb-b134-34bd43b95269", "de92a24f-f2dd-4601-b6ec-dc99806020af"), ("${uuidv4()}","0003f258-800d-4ee7-bab0-9b6eb0a4458e", "de92a24f-f2dd-4601-b6ec-dc99806020af"), ("${uuidv4()}","35a8bc90-d13f-4b29-977d-285f39139696", "de92a24f-f2dd-4601-b6ec-dc99806020af"), ("${uuidv4()}","7fea46b3-f6e7-4587-b1f1-9964bce29780", "de92a24f-f2dd-4601-b6ec-dc99806020af"), 
+      ("${uuidv4()}","04f04057-c410-4db2-abe6-be87bacc9068", "de92a24f-f2dd-4601-b6ec-dc99806020af"), 
+      ("${uuidv4()}","383826da-c7b8-45ba-8ff7-2da3a7d0e1da", "de92a24f-f2dd-4601-b6ec-dc99806020af"), ("${uuidv4()}","cb9f8233-8052-466f-ad00-96cf32379b0b", "de92a24f-f2dd-4601-b6ec-dc99806020af");
 	`,
     handleDatabaseQuery
+  );
+
+  database.query(
+    `
+      INSERT INTO sotero_db.user_game (id, user_id, game_id) VALUES
+        ("4a8155e0-d505-4488-8d0a-f9d95d8e2c64", "2f2faace-2507-4eaa-bcbe-89892307be30", "1b2a7262-c799-4999-989a-96bda254edfc"), ("0f326076-20e3-4767-a5c0-d33f3e00c7c5", "2f2faace-2507-4eaa-bcbe-89892307be30", "35a8bc90-d13f-4b29-977d-285f39139696"), ("be0677a6-8313-4a85-8b2d-f591c4909c4b", "2f2faace-2507-4eaa-bcbe-89892307be30", "04f04057-c410-4db2-abe6-be87bacc9068"), ("2bcdb722-e814-4c84-b9d2-f088a7454500", "2f2faace-2507-4eaa-bcbe-89892307be30", "383826da-c7b8-45ba-8ff7-2da3a7d0e1da"), ("7b33049a-6db5-4e68-9403-f5cc5a7a6bbb", "2f2faace-2507-4eaa-bcbe-89892307be30", "cb9f8233-8052-466f-ad00-96cf32379b0b"), ("ec4101e1-9865-4065-ba9a-a123e973350b", "8001e514-7ceb-4661-8cbc-68a22b523cbe", "1b2a7262-c799-4999-989a-96bda254edfc"), ("be0a73ac-7c6c-4b9c-a391-338ba1f43333", "8001e514-7ceb-4661-8cbc-68a22b523cbe", "04f04057-c410-4db2-abe6-be87bacc9068"), ("11ecf9fc-c016-47fb-8bb7-2f533facd7a6", "8001e514-7ceb-4661-8cbc-68a22b523cbe", "cb9f8233-8052-466f-ad00-96cf32379b0b"), ("60a80062-dce3-4d1f-b7b6-11e19f839a14", "6cc9657d-ece8-4198-b2bd-8c4625eb9330", "1b2a7262-c799-4999-989a-96bda254edfc"), ("44321b50-f8f5-4017-852b-6de4aeaddb0f", "6cc9657d-ece8-4198-b2bd-8c4625eb9330", "04f04057-c410-4db2-abe6-be87bacc9068");
+    `
+  );
+
+  database.query(
+    `
+      INSERT INTO sotero_db.user_game_categories (game_category_id, user_game_id) VALUES
+        ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","4a8155e0-d505-4488-8d0a-f9d95d8e2c64"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301", "0f326076-20e3-4767-a5c0-d33f3e00c7c5"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301", "be0677a6-8313-4a85-8b2d-f591c4909c4b"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","2bcdb722-e814-4c84-b9d2-f088a7454500"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","7b33049a-6db5-4e68-9403-f5cc5a7a6bbb"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301", "ec4101e1-9865-4065-ba9a-a123e973350b"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","be0a73ac-7c6c-4b9c-a391-338ba1f43333"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","11ecf9fc-c016-47fb-8bb7-2f533facd7a6"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","60a80062-dce3-4d1f-b7b6-11e19f839a14"), ("${uuidv4()}","6004fa08-a779-4b3a-b308-538640bd1301","44321b50-f8f5-4017-852b-6de4aeaddb0f");
+    `
   );
 };
