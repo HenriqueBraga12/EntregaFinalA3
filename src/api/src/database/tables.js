@@ -1,92 +1,82 @@
-import { handleDatabaseQuery } from "../functions/handleDatabaseQuery.js";
+import { db } from "./config.js";
 
-export const createTables = (database) => {
-  database.query(
-    "CREATE DATABASE IF NOT EXISTS `sotero_db`",
-    handleDatabaseQuery
-  );
+export const createTables = () => {
+  db.serialize(() => {
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS users (
+				id varchar(40) PRIMARY KEY NOT NUll,
+				first_name varchar(60) NOT NULL,
+				last_name varchar(60),
+				username varchar(60) NOT NULL,
+				email varchar(60) UNIQUE NOT NULL,
+				password varchar(60) NOT NULL,   
+				has_accepted_use_terms varchar(60) NOT NULL
+			  );
+			`
+    );
 
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.users (
-			id varchar(40) PRIMARY KEY NOT NUll,
-			first_name varchar(60) NOT NULL,
-			last_name varchar(60),
-			user_name varchar(60) NOT NULL,
-			email varchar(60) UNIQUE NOT NULL,
-			password varchar(60) NOT NULL,   
-			has_accepted_use_terms varchar(60) NOT NULL
-		  );
-		`,
-    handleDatabaseQuery
-  );
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS games_platforms (
+				id varchar(40) PRIMARY KEY NOT NUll,
+				name varchar(60) UNIQUE NOT NULL,
+				iconURL varchar(255)
+			  );
+			`
+    );
 
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.games_platforms (
-			id varchar(40) PRIMARY KEY NOT NUll,
-			name varchar(60) UNIQUE NOT NULL,
-			iconURL varchar(255)
-		  );
-		`,
-    handleDatabaseQuery
-  );
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS games (
+				id varchar(40) PRIMARY KEY NOT NUll,
+				name varchar(60) UNIQUE NOT NULL,
+				release_date varchar(255),
+				abstract varchar(255),
+				developer varchar(60),
+				publisher varchar(60)
+			  );
+			`
+    );
 
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.games (
-			id varchar(40) PRIMARY KEY NOT NUll,
-			name varchar(60) UNIQUE NOT NULL,
-			release_date varchar(255),
-			abstract varchar(255),
-			developer varchar(60),
-			publisher varchar(60)
-		  );
-		`,
-    handleDatabaseQuery
-  );
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS games_categories (
+				id varchar(40) PRIMARY KEY NOT NUll,
+				name varchar(60) UNIQUE NOT NULL
+			  );
+			`
+    );
 
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.games_categories (
-			id varchar(40) PRIMARY KEY NOT NUll,
-			name varchar(60) UNIQUE NOT NULL
-		  );
-		`,
-    handleDatabaseQuery
-  );
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS game_games_plataforms (
+				id varchar(40) PRIMARY KEY NOT NULL,
+				game_id varchar(40) NOT NULL REFERENCES games(id),
+				game_platform_id varchar(40) NOT NULL REFERENCES games_platforms(id)
+			  );
+			`
+    );
 
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.game_games_plataforms (
-			id varchar(40) PRIMARY KEY NOT NULL,
-			game_id varchar(40) NOT NULL REFERENCES sotero_db.games(id),
-			game_platform_id varchar(40) NOT NULL REFERENCES sotero_db.games_platforms(id)
-		  );
-		`,
-    handleDatabaseQuery
-  );
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS user_game (
+				id varchar(40) PRIMARY KEY NOT NULL,
+				user_id varchar(40) NOT NULL REFERENCES users(id),
+				game_id varchar(40) NOT NULL REFERENCES games(id),
+				grade float
+			  );
+			`
+    );
 
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.user_game (
-			id varchar(40) PRIMARY KEY NOT NULL,
-			user_id varchar(40) NOT NULL REFERENCES sotero_db.users(id),
-			game_id varchar(40) NOT NULL REFERENCES sotero_db.games(id),
-			grade float NOT NULL
-		  );
-		`,
-    handleDatabaseQuery
-  );
-
-  database.query(
-    `
-		  CREATE TABLE IF NOT EXISTS sotero_db.user_game_categories (
-			id varchar(40) PRIMARY KEY NOT NULL,
-			game_category_id varchar(40) NOT NULL REFERENCES sotero_db.games_categories(id),
-			user_game_id varchar(40) NOT NULL REFERENCES sotero_db.user_game(id)
-		  );
-		`,
-    handleDatabaseQuery
-  );
+    db.run(
+      `
+			  CREATE TABLE IF NOT EXISTS user_game_categories (
+				id varchar(40) PRIMARY KEY NOT NULL,
+				game_category_id varchar(40) NOT NULL REFERENCES games_categories(id),
+				user_game_id varchar(40) NOT NULL REFERENCES user_game(id)
+			  );
+			`
+    );
+  });
 };
