@@ -1,0 +1,104 @@
+
+/*.........LINHA 3 - CRIAR CONTA..............*/
+
+div.formContainer2{     
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin:auto;
+ padding:0;
+ width: 50%;
+ height: auto;
+ box-shadow: 1px 1px 3px #333333;  
+}
+header.criarConta2{
+ background-color: #02004B;
+ display:flex;
+ width:100%;
+ height: auto;
+ align-items: center;
+ justify-content: center;
+ box-sizing: border-box;
+ position:relative;
+
+}
+h2.textCriar2{
+ padding:0;
+ margin:15px 0;
+ width: 100%;
+ height:auto;
+ box-sizing: border-box;
+ text-align: center;
+ font-size: clamp(1.2rem, 1rem + 1.4vw, 2rem);    
+}
+
+/*.........AVISO DADOS...........*/
+p.avisoDados{
+background-color: #D9D9D9;
+width: 100%;
+height:auto;
+box-sizing: border-box;
+text-align: center;
+margin:0;
+padding:15px 20px;
+color:#5d5d5d;  
+font-size: clamp(1rem, .8rem + 1vw, 2rem); 
+}
+
+/*.........FORMULÁRIO....................*/
+div.cadastrar02{
+ width: 100%; 
+ height:auto; 
+ border:1px solid #fff;   
+ margin:0;
+ padding:0;
+ background-color: #f2f9d4;
+ box-sizing: border-box;
+} 
+form.formPag2{
+background-color: #FAFFE5;
+width:100%;
+height:100%;
+margin:0;
+padding:10px 0;
+box-sizing: border-box;
+}
+div.SelectOption, div.SelectInput{
+display:flex;
+flex-direction: column;
+width: 50%;
+margin:10px auto;
+}
+.formPag2 label{
+  color:#000;
+  margin: 10px 0 3px;
+  font-size: clamp(1rem, .3rem + 1vw, 2rem); 
+  }
+
+select#estado, input#dataNasc{
+background-color: #ffffff;
+padding:10px 0;
+width:100%;
+height:auto;
+border:.5px solid #b6b6b6;
+font-size: clamp(1rem, 1rem + .5vw, 3rem); 
+
+}
+
+ /*........RESPONSIVIDADE.........*/
+
+@media screen and (max-width: 819px) {
+ div.formContainer2{ 
+   width: 80%;
+ }  
+ div.SelectInput, div.SelectOption{
+   width: 80%;
+ }
+ div.formContainer2{  
+   margin:30px 0 0;
+ }
+ h2.textCriar2{
+   padding:0 50px 0 0;    
+ }
+}
