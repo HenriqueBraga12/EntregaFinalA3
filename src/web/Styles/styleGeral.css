@@ -1,0 +1,223 @@
+body{
+ outline: 0;
+ background-color: #4c5d70;
+ padding:0;
+ margin: 0; 
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+ }
+ a.link{
+  text-decoration: none;
+  cursor:pointer;
+  max-width:100%;
+  height:auto;
+  box-sizing: border-box;
+ }
+ /*......SECTION - pag cadastro.......*/
+ section.conteudo{
+  color: #fff;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  max-width:100%;
+  height:max-content;
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+ } 
+ header.cadastro{  
+  display:flex;
+  align-items: center;
+  justify-content: center;   
+  width: 100%;
+  height:auto ;
+  margin:0;
+  padding:0;
+  background:linear-gradient(#11253D, #6A0066, #080064);
+} 
+h2.textCadastro{
+  max-width: 100%;
+  color: #fff;
+  padding: 30px 0;
+  margin:0;
+  font-size: clamp(.5rem, 1rem + 1vw, 3rem); 
+}
+ 
+ /*.........LINHA 2 - RETORNAR HOME.........*/
+
+ div.returnHome{
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: start;
+  margin:20px 0 0;
+  padding:0 ;
+  width: 100%;
+  height:max-content;
+  box-sizing:border-box;
+  position:relative; 
+ }
+ .figureHome{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+ }
+ img.homePage1{
+ width:clamp(4rem, 2rem + 1vw, 2vw);
+  margin:0;
+  padding:0;
+  filter: invert(75%);
+  filter: drop-shadow(5px 5px 20px red) invert(75%);
+ 
+ }
+ img.homePage1:hover{     
+  filter: drop-shadow(5px 5px 20px rgb(2, 12, 82)) invert(100%);
+}
+img.homePage1:active{     
+  transform: scale(.9);
+}
+figcaption.ficapt{
+  text-align: center;
+  max-width: 100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  font-size: clamp(.5rem, .4rem + .5vw, 2rem); 
+ }
+ /*.........LINHA 2 - RETORNAR HOME.........*/
+
+ div.returnHome{
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: start;
+  margin:20px 0 0;
+  padding:0 ;
+  width: 100%;
+  height:max-content;
+  box-sizing:border-box;
+  position:relative; 
+ }
+ .figureHome{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+ }
+ img.homePage1{
+  max-width: 35px;
+  margin:0;
+  padding:0;
+  filter: invert(75%);
+  filter: drop-shadow(5px 5px 20px red) invert(75%);
+ 
+ }
+ img.homePage1:hover{     
+  filter: drop-shadow(5px 5px 20px rgb(2, 12, 82)) invert(100%);
+}
+img.homePage1:active{     
+  transform: scale(.9);
+}
+figcaption.ficapt{
+  text-align: center;
+  max-width: 100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  font-size: clamp(.5rem, .4rem + .5vw, 2rem); 
+ }
+ /*.........Retornar home/Mobile....................*/
+div.containerFechar{
+  margin:0;
+  padding:0 10px;
+  display:flex;  
+  align-items: end;
+  justify-content: end;
+  width:100%;
+  height:auto; 
+  color:#ffb6b6;
+  box-sizing: border-box;
+  display:none;
+  position:absolute;
+  z-index:1;
+}
+
+h1.fecharForm{
+  margin:0 0px 0 0;
+  padding:0 10px;
+  width:max-content;
+  height:auto;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #02004B;
+  box-shadow:.5px .5px 5px #888888;
+  color:#ffb6b6;
+  z-index: 1;
+}
+h1.fecharForm:hover{
+   color:#12ffc4;
+   transform:scale(.985);
+   background-color: #cd00c699;
+}
+h1.fecharForm:active{
+  color:#d0ff12;
+  transform:scale(.98);
+  background-color: #740070;
+}
+
+/*........Número Página no formulário.........*/
+
+p.pNumPag{
+  max-width: 100%;
+  height:auto;
+  display:flex;  
+  color:#8c8c8caa; 
+  font-size: clamp(.5rem, 1rem + 1vw, 5rem);
+  justify-content: end;
+}
+
+/*........RESPONSIVIDADE........*/
+
+@media screen and (max-width: 819px) {  
+  div.returnHome{
+    display:none;
+  } 
+  div.containerFechar{
+    display:flex;
+  } 
+}
+
+/*.....BUTTONS das pág cadastro.......*/
+
+div.containerButtons{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin:20px 0 0;
+  }
+  .button1, .button2{
+  padding:5px 15px;
+  font-size: clamp(1.2rem, .3rem + 1vw, 2rem); 
+  border:none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #07070322;
+  cursor:pointer;
+  }
+  .button1{
+   background-color: #d5b3ff;
+  }
+  .button2{
+  background-color: #99faff;
+  }
+  .button1:hover, .button2:hover{
+  background-color: #87e5ffb1;
+  }
+  .button1:active, .button2:active{
+   box-shadow: -.5px .5px 4px #07070322;
+   transform:scale(.98);
+   }

@@ -1,0 +1,143 @@
+section#containerMobile {
+ margin: 0;
+ padding: 15px 0;
+ max-width: 100%;
+ height: auto;
+ background: linear-gradient(#11253D, #6A0066, #080064);
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ display: none;
+}
+figure#fenixMobile {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 0;
+ padding: 0;
+ width: 100%;
+ box-sizing: border-box;
+ height: auto;
+}
+figure#fenixMobile img.fenixMobile { 
+ box-sizing: border-box;
+ width: 100px;
+ height: auto;
+ margin: 0;
+ padding: 0;
+ width: clamp(1rem, 2.5rem + 5vw, 15rem);
+}
+h1.text-sotero {
+ color: #c2d423;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 0;
+ padding: 0;
+ width: 100%;
+ height: auto;
+ box-sizing: border-box;
+}
+
+/*..........MENU-BARRAS mobile...........*/
+#menuContainer{
+ width:100%;
+ height:auto;
+ box-sizing: border-box;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+figure.menuBarra img {
+ width: clamp(30px, 40px, 13vw);
+ height: auto;
+ margin: auto;
+ padding: 0; 
+}
+
+/*...............DROPDOWN...............*/
+
+div.dropdown-menu{
+  width: max-content;
+  height:auto;
+  padding:0;
+  margin:0;
+ }
+.dropdown-content {
+  position:absolute;
+  top: 85px;
+  right:75px;
+  position: absolute;
+  min-width: 160px;
+  height:auto; 
+  box-shadow: 0px 8px 16px 0px #00000033;
+  z-index: 1;
+  background-color: #f9f9f9;
+  display:none;  
+}
+.dropdown-content a {
+  float:none;
+  color: black;
+  padding: 10px 0;
+  margin:20px 10px; 
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: #98ffb9;
+  cursor:pointer;
+  font-size: clamp(0.875rem, 1.1rem + 0.5365vw, 2rem); 
+  text-align: center;
+  box-shadow:1px 1px 3px #454545;
+  color:#080064;
+  border-radius:7px;
+}
+.dropdown-content a:hover {
+  background-color: #eefdc8;
+  color:#000000;
+}
+.mostrar{
+  display:block;
+  transition:display 1s ease;   
+  z-index: 1;
+}
+#carrinho3{
+  width:1em;
+  filter:blur(5px 5px 10px #000);
+  filter: drop-shadow(5px 5px 10px gray);  
+}
+
+/*.....RESPONSIVIDADE.....*/
+
+@media screen and (max-width: 819px) {
+ section#containerMobile {
+   display: flex;
+ }
+ h1.titleMobile {
+   color: #c2d423;
+ }
+ div.dropdown-menu{   
+   right: 100px;  
+ }
+}
+@media screen and (max-width: 623px) {
+  div.dropdown-menu {   
+   right: 80px;  
+ }
+}
+@media screen and (max-width: 512px) {
+  div.dropdown-menu {   
+   right: 60px;  
+ }
+}
+@media screen and (max-width: 403px) {
+  div.dropdown-menu {   
+   right:40px;  
+ }
+}
+
+@media screen and (max-width: 334px) {
+ h1.titleMobile {
+   font-size: 22px;
+ }
+}

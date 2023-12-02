@@ -1,0 +1,763 @@
+/*.............. HEADER WEB ............*/
+div.containerHome {
+ background:linear-gradient(#11253D, #6A0066, #080064);
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ max-width: 100%;
+ height:auto;
+ padding:0;
+ margin:0;
+}
+div.containerDivs{
+display:flex;
+align-items: center;
+justify-content: space-around;
+width: 100%;
+height:auto;
+margin:0;
+padding:20px 0;
+}
+/*..........IMAGEN E TÍTULO HEADER..........*/
+div.boxFenix{
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ width:content;
+ max-height:content;
+ margin:0;
+ padding:0;
+}
+h1.sotero, h1.games{
+ margin:0;
+ padding:0;
+ color:#fffabf;
+ font-size: clamp(.5rem, .5rem + 1.7vw, 2rem);
+ width: max-content;
+ height:auto;
+}
+figure.figFenixHeader{
+ width: max-content;
+ height:auto;
+ margin:0;
+ padding:0;
+}
+img.fenixHome{
+ width: clamp(.5rem, 1rem + 6vw, 15rem); 
+}
+/*.....DROPDOWN-JOGOS web.....*/
+div.boxJogos{  
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height:auto;
+  margin:0;
+  padding:0;
+  position:relative;
+  cursor:pointer;
+ }
+.dropdownJogos{
+  position:absolute;
+  top: 55px;
+  position: absolute;
+  min-width: 160px;
+  height:auto; 
+  box-shadow: 0px 8px 16px 0px #00000033;
+  z-index: 1;
+  background-color: #100202;
+  display:none;
+}
+.dropdownJogos a {
+  float:none;
+  color: black;
+  padding: 5px 0;
+  margin:20px 10px; 
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: #e0ff98;
+  cursor:pointer;
+  font-size: clamp(0.875rem, 1rem + 0.5365vw, 1.5rem); 
+  text-align: center;
+  box-shadow:1px 1px 3px #454545;
+  color:#080064;
+  border-radius:7px;  
+}
+.dropdownJogos a:hover{
+  background-color: #eefdc8;
+  color:#000000;
+}
+.dropdownJogos a:active{
+  transform:scale(.99);
+}
+.game{  /*......STYLE JAVA SCRIPT...*/
+  display:block; 
+  z-index: 1;
+}
+
+a.nav-a{  /*...SEJA MEMBRO - LOGIN...*/
+text-decoration: none;
+display:block;
+margin:0;
+padding:0;
+cursor: pointer;
+}
+h3.jogos, h3.cadastre, h3.login{
+ font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
+ box-shadow: 1px 1px 3px #303030b6;
+ padding:10px; 
+ margin:0;
+ background-color: #88008399;
+ color:#FFFFFF;
+ letter-spacing: 2px;
+ border-radius:4px;
+}
+nav.boxCadastroLogin{  /*.....LOGIN.....*/
+  display:flex;  
+  align-items: center;    
+  justify-content: center;
+  gap:0 50px;
+  width: max-content;
+  height:auto;
+  margin:0;
+  padding:0;
+ }
+
+/*......Efeito ao sobrepor o mouse.........*/
+h3.jogos:hover, h3.cadastre:hover, h3.login:hover{
+ color:#28f1ff;
+ background-color: #880083dc;
+}
+/*......Efeito ao clicar com o mouse.........*/
+h3.jogos:active, h3.cadastre:active, h3.login:active{
+  color:#12ffc4;
+  transform:scale(.985);
+  box-shadow: -1px -1px -3px #3e3e3e;
+  background-color: #cd00c699;
+}
+
+/*...........RESPONSIVIDADE HEADER WEB...............*/
+
+@media screen and (max-width: 819px) {  
+ div.containerHome {
+   display:none;
+ } 
+}
+
+
+/*............IMG EFEITO DE FUNDO............*/
+
+div.FundoEfeito{
+ background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIzNNchxiA4vjtgUs4nsJaTywqzylKsZBMKRidOSMs1BZc-TsNORuxJmp-TsJqgJMs_I_T2OkgRgZaI0973UWnebRsGmhDDp3P5pp-xeG9agkS5YuzaV0GkZVTKeJ0lmRoKDPlNvtbpOwoGeibnzkHN89YVJ2i7bB7_lselbgj_kYl5jco67TEVSmvqMk/s320/mountain%20.jpg");
+ background-position: 100%;
+ background-repeat:no-repeat;
+ background-size:cover;
+ margin:0;
+ padding:45px 10px;  
+}
+/*............TEXTO SOBRE IMAGEM DE FUNDO............*/
+div.ConteudoTextoManhas{
+ max-width: 100%;
+ max-height:100%;
+ margin:0;
+ display:block;
+}
+p.textManhas{ 
+ max-width:100%;
+ max-height:100%;
+ padding:0;
+ margin:0 ;
+ translate:10px;
+ animation: manha 8s ease-in alternate, text 1s 5s ease-in-out 7;
+ position:absolute;
+ color:#FFFFFF;
+ font-size: clamp(0.875rem, 0.7442rem + 0.5365vw, 2rem);
+ transform:translateY(-40px); 
+}
+@keyframes manha {
+ 0%{
+   opacity:0;
+ }  
+ 50%{
+   opacity:0;
+ }
+ 100%{
+   opacity:1;
+ }
+}
+@keyframes text {
+ 0%{
+   text-shadow:none;
+ } 
+ 100%{    
+   text-shadow:2px 2px 10px #000000;
+ }
+}
+
+/*............IMAGEN FENIX COM EFEITO............*/
+figure.figFenixEfeito{
+ max-width:100%;
+ height:100%;
+ margin:0;
+ padding:0;
+ display:flex;
+ justify-content: space-around;  
+ position:relative;  
+ 
+}
+img.fenixEfeito {
+ width:189px;
+ height:135px;
+ margin:0;
+ padding:0;
+ animation:imgfnx 7s ease-in-out alternate , piscar 1s  3.2s linear infinite;
+}
+/*...........RESPONSIVIDADE IMAGEM FUNDO...............*/
+
+@media screen and (max-width: 2217px) {  
+div.FundoEfeito{
+padding:100px 10px;  
+}
+} 
+@media screen and (max-width: 1700px) {  
+div.FundoEfeito{
+padding:80px 10px;  
+}
+} 
+@media screen and (max-width: 1423px) {  
+div.FundoEfeito{
+  padding:70px 10px;  
+ }
+} 
+@media screen and (max-width: 1242px) {  
+ div.FundoEfeito{
+    padding:45px 10px;  
+   }
+ }
+
+/* .......EFEITO IMG FENIX............ */
+
+@keyframes imgfnx {
+ 0%{
+   transform:scale(.2); 
+   opacity: 0;
+   transform: translateX(-1100px); 
+   filter: blur(1px);     
+ }
+ 40%{
+   transform:scale(.4); 
+   transform:translateX(80px);
+   opacity: 1; 
+   display:block;    
+ }
+ 60%{
+   transform:rotate(40px);
+   opacity: 1;
+   display:block; 
+ }
+ 80%{
+   transform:rotate(20px);
+   transform:scale(1);    
+   transform:rotate(15deg); 
+   opacity: 1;
+   display:block; 
+ }
+ 100% {    
+   transform:rotate(0); 
+   transform:scale(1);
+   opacity: 1;
+   display:block; 
+ }
+}
+@keyframes piscar {
+ from{filter:none;}
+ to{filter: drop-shadow(.5px .5px 2px #06061b);}
+}
+
+/*...........RESPONSIVIDADE IMG EFEITO...........*/
+@media screen and (max-width: 1112px) {
+ img.fenixEfeito {
+ max-width:150px;
+ max-height:107px;
+ }
+@keyframes imgfnx {
+0%{
+ transform:scale(.2); 
+ opacity: 0;
+ transform: translateX(-600px); 
+ filter: blur(1px);
+}
+40%{
+ transform:scale(.4); 
+ transform:translateX(0);
+ opacity: 1;     
+}
+ 60%{
+ transform:rotate(40px);
+ opacity: 1;
+ }
+80%{
+ transform:rotate(20px);
+ transform:scale(1);    
+ transform:rotate(15deg); 
+ opacity: 1;
+}
+100% {    
+ transform:rotate(0); 
+ transform:scale(1);
+ opacity: 1;
+}
+}
+ @keyframes shadow {
+   from{filter:none;}
+   to{filter: drop-shadow(.5px .5px 2px #06061b);}
+ }
+}
+@media screen and (max-width: 854px) {
+ img.fenixEfeito {
+   max-width:130px;
+   max-height:92.73px;
+   translate:-20px;
+ }
+}
+@media screen and (max-width: 705px) {
+ img.fenixEfeito {
+   max-width:100px;
+   max-height:71.42px;
+ translate:-20px;
+ }
+}
+@media screen and (max-width: 571px) {
+ img.fenixEfeito {
+ max-width:100px;
+ max-height:71.42px;
+ translate:-100px;
+ }
+.textManhas{
+ animation:none;
+}
+}
+@media screen and (max-width: 406px) {
+ img.fenixEfeito {
+ max-width:80px;
+ max-height:57px;
+ translate:-130px;
+ }
+.textManhas{
+ display:none;
+}
+}
+@media screen and (max-width: 274px) {
+ img.fenixEfeito {
+ max-width:65px;
+ max-height:46.37px;
+ translate:-110px;
+ }
+}
+
+/*.......SLIDE DE IMAGENS.......*/
+
+div.slideShow{
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ gap: 0 30px;
+ margin: 30px auto;
+ padding: 0;
+}  
+
+.imgGame{
+ width:400px;
+ margin:0;
+ padding:0;
+}
+
+/*.......RESPONSIVIDADE SLIDE DE IMAGENS.......*/
+
+@media screen and (max-width: 1750px) {
+ .imgGame{
+   width: 360px;
+ }  
+}
+@media screen and (max-width: 1588px) {
+ .imgGame{
+   width: 340px;    
+ }  
+}
+@media screen and (max-width: 1504px) {
+ .imgGame{
+   width: 300px;    
+ }  
+}
+@media screen and (max-width: 1326px) {
+ .imgGame{
+   width: 280px;    
+ }  
+}
+@media screen and (max-width: 1252px) {
+ .imgGame{
+   width: 250px;    
+ }  
+}
+@media screen and (max-width: 1127px) {
+ .imgGame{
+   width: 220px;    
+ } 
+}
+ @media screen and (max-width: 1000px) {
+   .imgGame{
+     width: 200px;    
+   }  
+}
+@media screen and (max-width: 921px) {
+ .imgGame{
+   width: 180px;    
+ }  
+}
+@media screen and (max-width: 840px) {
+ .imgGame{
+   width: 180px; 
+ }
+   div.slideShow{
+     gap: 10px 10px;
+     flex-wrap:wrap;
+   }
+ } 
+ @media screen and (max-width: 474px) {
+   .imgGame{
+     width: 160px; 
+   }
+ } 
+
+/*..........ROW FOUR - IMAGENS LOGOS..........*/
+section#container-categoria{ /*.........CATEGORIAS.......*/
+  padding:0;
+  margin:10px;
+  max-width: 100%;
+  height:auto;  
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #000000;
+  }
+div.container-tipos{
+  padding:0;
+  width: 100%;
+  height:auto;
+  margin:0;
+  text-align: center;
+}
+h3.texto-categoria{
+  font-size: clamp(0.875rem, 1rem + 2vw, 1.5rem); 
+  padding:10px 0 10px 30px;
+  margin:0 0 10px 0;
+  color:#fff;
+  text-align:left;
+}
+div.container-tiposCatedoria{
+  padding:15px 0;
+  margin:0;
+  width:100%;
+  height:auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;  
+}
+p.categoria-title{
+  padding:0 5px;
+  margin:0 auto 10px;
+  max-width:100%;
+  height:auto;
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.6rem); 
+  color:#e7e899;
+  text-decoration: none;
+  cursor:pointer;
+}
+div.container-tiposCatedoria p:hover{
+ color:yellow;
+}
+/*.......Lista de jogos..........*/
+ul, li{
+  list-style: none;  
+}
+.ul-geral{
+ padding:0;
+ margin:0;
+ width:100%;
+ height:auto;
+ position:relative;
+}
+.li-geral{
+  display:flex;
+  margin:0 auto;
+  padding-bottom: 10px;
+  width:max-content;
+  height:auto;
+  align-items: center;
+  justify-content: space-between; 
+}
+.ul-filho{
+  text-align: left;
+  top:45px;
+  left:20px;
+  margin:auto;
+  padding:10px;
+  border:1px dotted #f3ff6e9f;
+  border-radius:10px;
+  max-width:100%;  
+  position:absolute;
+  background-color: #8fffdad5;
+  height:auto;
+  opacity:0;
+  visibility: hidden; 
+  transition:height 1s ease, opacity 1s ease, visibility 5ms ease;
+}
+.li-filho{
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.4rem); 
+  padding:5px;
+  margin:10px auto;
+  width:100%;
+  height:auto;
+  border-radius:5px;
+  color:#053428; 
+  box-sizing: border-box;
+}
+  .li-filho a{
+    text-decoration: none;
+    display:block;
+    max-width: 100%;
+    height:auto;
+    padding:0;
+    margin:0;
+}
+.li-filho a:hover{
+  color:#000000;
+  text-shadow: rgb(255, 168, 168);
+}
+.li-geral:hover .ul-filho{  
+  opacity:1;
+  visibility: visible;
+  height:max-content;
+}
+.li-filho:first-child{
+  margin:0 0 10px 0;
+}
+.li-filho:last-child{
+  margin:10px 0 0 0;
+}
+/*.......Categorias jogos MOBILE..........*/
+div.categoria-responsiva{
+  width:max-content;
+  height:auto;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  display:none;
+}
+h4.categoria-title{  
+  padding:0 5px;
+  margin:0 auto 10px;
+  max-width:100%;
+  height:auto;
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.3rem); 
+  color:#e7e899;
+  text-decoration: none;
+  cursor:pointer;
+}
+div.container-p{
+  margin:0 0 0 5px;
+  padding:0 5px;
+  max-width: 100%;
+  height:auto;
+  border:1px dotted #f3ff6e9f;
+  border-radius:10px;
+  text-align: left;
+}
+.p-filho{
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.2rem); 
+  width:100%;
+  height:auto;
+  margin:20px 0;
+  padding:5px;
+  border-radius:5px;
+  color:#12ffc4;
+  background-color: rgba(255, 255, 143, 0.149)
+}
+/*.........IMAGEM LOGOTIPO JOGOS................*/
+
+div.container-logos{
+ background: linear-gradient( #4f5a706d, #197ea0, #0366c3);
+ padding:0;
+ margin:0;
+ max-width:100%;
+ max-height: auo;
+ border-top:1px dotted #afafaf8f;
+ box-sizing: border-box;
+}
+h3.classico{
+  font-size: clamp(0.875rem, 1rem + 2vw, 1.5rem); 
+  padding:10px 0 10px 30px;
+  margin:20px 0 10px 0;
+  color:#fff;
+  text-align:left;
+}
+
+div.logos{ /*.........container img logos.......*/
+ display:grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+ align-items: center;
+ justify-content: space-around;
+ margin:auto;
+ max-width:100%;
+ max-height: auto;
+ }
+.logo-img{  
+ max-width:100%;
+ max-height: 100%;
+ padding:20px 40px;
+ width:120px;
+ height: 120px;
+ margin:auto;   
+}
+/*........... RESPONSIVIDADE JOGOS...........*/
+
+@media screen and (max-width:1072px){
+  div.container-tiposCatedoria{
+    display:none;
+  }
+  div.categoria-responsiva{
+    width:max-content;
+    height:auto;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  p.p-filho{
+    padding:5px 0;
+    margin:0;
+    max-width:max-content;
+    height:auto;
+    color:#12ffc4;
+  }
+}
+@media screen and (max-width:993px){
+  div.categoria-responsiva{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+  }
+}
+@media screen and (max-width:743px){
+  div.categoria-responsiva{    
+    grid-template-columns: 1fr 1fr;    
+  }
+}
+@media screen and (max-width:542px){
+  div.categoria-responsiva{   
+    grid-template-columns: 1fr 1fr;    
+  }
+  p.p-filho{  
+    font-size: clamp(0.875rem, 1rem + 1vw, 1rem);       
+  }
+}
+@media screen and (max-width:427px){
+  div.categoria-responsiva{   
+    grid-template-columns: 1fr;    
+  }
+  p.p-filho{  
+    font-size: clamp(0.875rem, 1rem + 1vw, 1rem);       
+  }
+}
+@media screen and (max-width: 888px) {
+ .logo-img{  
+   max-width:100%;
+   max-height: 100%;
+   width:110px;
+   height: 110px;
+   margin:auto;     
+}
+
+div.logos{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr ;
+   align-items: center;
+   margin:auto;
+ }
+}
+@media screen and (max-width: 768px) {
+ .logo-img{  
+   max-width:100%;
+   max-height: 100%;
+   padding:20px;
+   width:100px;
+   height: 100px;
+   margin:auto;     
+}
+div.logos{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   align-items: center;
+   margin:auto;
+ }
+}
+@media screen and (max-width: 700px) {
+ .logo-img{
+   padding:20px;
+   width:75px;
+   height: 75px;
+   margin:auto; 
+ }
+}
+@media screen and (max-width: 613px) {
+ div.logos{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr ;
+   align-items: center;
+   margin:auto;
+ }
+}
+@media screen and (max-width: 559px) {
+  .logo-img{ 
+   padding:20px;
+   width:75px;
+   height: 75px;
+   margin:auto;     
+ }    
+ div.logos{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  align-items: center;
+  margin:auto;
+}
+
+}
+@media screen and (max-width: 542px) {
+  .logo-img{  
+   max-width:100%;
+   max-height: 100%;
+   padding:20px;
+   width:75px;
+   height: 75px;
+   margin:auto;     
+ }
+ div.logos{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   align-items: center;
+   margin:auto;
+ }
+}
+@media screen and (max-width: 334px) {
+ div.logos{
+   display:grid;
+   grid-template-columns: 1fr 1fr ;
+   align-items: center;
+   margin:auto;
+ }  
+}
