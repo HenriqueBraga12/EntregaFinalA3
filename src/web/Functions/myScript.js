@@ -28,4 +28,15 @@ window.onclick = function(e) {
     }
   }
  }
- 
+
+ function carShop(){
+  document.getElementById("car").classList.toggle("mostre");
+}
+window.onclick = function(e) {
+  if (!e.target.matches('.carrinho')) {
+  let car = document.getElementById("car");
+    if (car.classList.contains('mostre')) {
+      car.classList.remove('mostre');
+    }
+  }
+ }
