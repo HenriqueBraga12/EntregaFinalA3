@@ -1,4 +1,4 @@
-import { GameDAO } from "../dto/GameDAO.js";
+import { GameDAO } from "../dao/GameDAO.js";
 
 export class GameController {
   static async createGame(request, response) {

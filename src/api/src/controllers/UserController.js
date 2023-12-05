@@ -1,4 +1,4 @@
-import { UserDAO } from "../dto/UserDAO.js";
+import { UserDAO } from "../dao/UserDAO.js";
 
 export class UserController {
   static async createUser(request, response) {
