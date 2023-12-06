@@ -1,0 +1,36 @@
+.intro {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../../assets/images/intro-bg.jpg");
+  background-size: cover;
+}
+
+.intro__container {
+  max-width: 1080px;
+  width: 100%;
+  padding: 32px 180px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__title {
+  color: #e9e9ea;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.1em;
+  text-transform: uppercase;
+  max-width: 623px;
+  margin-top: 64px;
+}
+
+.intro__text {
+  color: #bcbcd1;
+  font-size: 18px;
+  line-height: 1.4em;
+  margin-top: 24px;
+}
+
+.intro__button {
+  margin-top: 24px;
+}

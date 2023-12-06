@@ -31,6 +31,7 @@ export const createTables = () => {
 			  CREATE TABLE IF NOT EXISTS games (
 				id varchar(40) PRIMARY KEY NOT NUll,
 				name varchar(60) UNIQUE NOT NULL,
+				cover_url varchar(255),
 				release_date varchar(255),
 				abstract varchar(255),
 				developer varchar(60),

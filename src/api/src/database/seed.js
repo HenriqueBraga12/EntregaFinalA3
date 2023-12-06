@@ -34,10 +34,10 @@ export const execSeeds = async () => {
 
     db.run(
       `
-      INSERT INTO games (id, name) VALUES 
-        ("1b2a7262-c799-4999-989a-96bda254edfc", "League of Legends"), ("c8ed4bde-acf6-4f4c-a528-e5e426b36d61", "Valorant"), ("7b1918ed-9559-4706-a4c1-417eaadd3761", "Dota 2"), ("2b27853c-0cab-41cb-b134-34bd43b95269", "Call of Duty: Modern Warfare"), ("0003f258-800d-4ee7-bab0-9b6eb0a4458e", "Forza Motorsport"), ("35a8bc90-d13f-4b29-977d-285f39139696", "American Truck Simulator"), ("7fea46b3-f6e7-4587-b1f1-9964bce29780", "Assetto Corsa Competizione"), 
-        ("04f04057-c410-4db2-abe6-be87bacc9068", "Grand Theft Auto IV"), 
-        ("383826da-c7b8-45ba-8ff7-2da3a7d0e1da", "The Division 2"), ("cb9f8233-8052-466f-ad00-96cf32379b0b", "Counter Strike: Global Ofensive 2");
+      INSERT INTO games (id, name, cover_url) VALUES 
+        ("1b2a7262-c799-4999-989a-96bda254edfc", "League of Legends", "https://static-cdn.jtvnw.net/ttv-boxart/21779-272x380.jpg"), ("c8ed4bde-acf6-4f4c-a528-e5e426b36d61", "Valorant", "https://static.wikia.nocookie.net/dublagem/images/b/bb/Valorant_Postar_2.jpg"), ("7b1918ed-9559-4706-a4c1-417eaadd3761", "Dota 2", "https://i.pinimg.com/originals/8a/8b/50/8a8b50da2bc4afa933718061fe291520.jpg"), ("2b27853c-0cab-41cb-b134-34bd43b95269", "Call of Duty: Modern Warfare", "https://image.api.playstation.com/cdn/UP0002/CUSA03522_00/t7SHaSjuUXFZ3VHl6U4FuSFrDMtkOIyP.png"), ("0003f258-800d-4ee7-bab0-9b6eb0a4458e", "Forza Motorsport", NULL), ("35a8bc90-d13f-4b29-977d-285f39139696", "American Truck Simulator", "https://cdn-products.eneba.com/resized-products/390c72c3457f3045b06b7c3227025372_350x200_3x-0.jpg"), ("7fea46b3-f6e7-4587-b1f1-9964bce29780", "Assetto Corsa Competizione", ""), 
+        ("04f04057-c410-4db2-abe6-be87bacc9068", "Grand Theft Auto IV", NULL), 
+        ("383826da-c7b8-45ba-8ff7-2da3a7d0e1da", "The Division 2", NULL), ("cb9f8233-8052-466f-ad00-96cf32379b0b", "Counter Strike: Global Ofensive 2", NULL);
     `
     );
 
