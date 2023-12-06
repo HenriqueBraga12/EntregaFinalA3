@@ -1,13 +1,97 @@
 _type: export
 __export_format: 4
-__export_date: 2023-12-05T19:12:38.005Z
+__export_date: 2023-12-06T17:37:20.546Z
 __export_source: insomnia.desktop.app:v2023.5.8
 resources:
+  - _id: req_2fa766346e794c5a8746939922ab65ba
+    parentId: fld_b59ad1781a694c9493cc00d5184e5c9f
+    modified: 1701883696295
+    created: 1701879970523
+    url: "{{ _.baseURL }}/login"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "guilherme@hotmail.com",
+        	"password": "12345678"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1701879852294
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_b59ad1781a694c9493cc00d5184e5c9f
+    parentId: wrk_47eada67b88a4772b2029abff64aa0c1
+    modified: 1701879842772
+    created: 1701879842772
+    name: AuthController
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1701879842772
+    _type: request_group
+  - _id: wrk_47eada67b88a4772b2029abff64aa0c1
+    parentId: null
+    modified: 1701477418067
+    created: 1701477418067
+    name: sotero.yaml
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_7311b25dfa6941eab469769a405de1d3
+    parentId: fld_b59ad1781a694c9493cc00d5184e5c9f
+    modified: 1701883097862
+    created: 1701692487266
+    url: "{{ _.baseURL }}/signup"
+    name: Sign up
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"first_name": "Guilherme",
+        	"last_name": "Arana",
+        	"username": "guilherme",
+        	"email": "guilherme@hotmail.com",
+        	"password": "12345678",
+        	"has_accepted_use_terms": true
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1701879852194
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_772144be45054d2d9d86ceadb4fbb42c
     parentId: fld_a7d92a7705374f3fbd479081c6bbe8b8
-    modified: 1701696483133
+    modified: 1701883673898
     created: 1701696348797
-    url: "{{ _.baseURL }}/user/delete/9c8abcaa-4daa-4735-a247-84ce51f3d9d8"
+    url: "{{ _.baseURL }}/user/delete/06b4422f-fdcf-4cca-90a4-b80c740cdc80"
     name: Delete user
     description: ""
     method: DELETE
@@ -36,14 +120,6 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1701477429912
     _type: request_group
-  - _id: wrk_47eada67b88a4772b2029abff64aa0c1
-    parentId: null
-    modified: 1701477418067
-    created: 1701477418067
-    name: sotero.yaml
-    description: ""
-    scope: design
-    _type: workspace
   - _id: req_6d46c7020cb2434cae468fe4a6b04b4d
     parentId: fld_a7d92a7705374f3fbd479081c6bbe8b8
     modified: 1701696343182
@@ -67,41 +143,6 @@ resources:
         value: insomnia/2023.5.8
     authentication: {}
     metaSortKey: -1701477447383
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_7311b25dfa6941eab469769a405de1d3
-    parentId: fld_a7d92a7705374f3fbd479081c6bbe8b8
-    modified: 1701693086614
-    created: 1701692487266
-    url: "{{ _.baseURL }}/user/create"
-    name: Create
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-        	"first_name": "Miguel",
-        	"last_name": "Alexandre",
-        	"username": "FugiroNakonbi",
-        	"email": "miguel@hotmail.com",
-        	"password": "12345678",
-        	"has_accepted_use_terms": true
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-      - name: User-Agent
-        value: insomnia/2023.5.8
-    authentication: {}
-    metaSortKey: -1701477447283
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
