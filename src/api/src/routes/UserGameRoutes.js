@@ -1,20 +1,38 @@
 import express from "express";
 
 import { UserGameController } from "../controllers/UserGameController.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 const UserGameRouter = express.Router();
 
-UserGameRouter.get("/user-game", UserGameController.listUserGames);
+UserGameRouter.get(
+  "/user-game",
+  authMiddleware,
+  UserGameController.listUserGames
+);
 
-UserGameRouter.post("/user-game/create", UserGameController.createUserGame);
+UserGameRouter.post(
+  "/user-game/create",
+  authMiddleware,
+  UserGameController.createUserGame
+);
 
-UserGameRouter.put("/user-game/update/:id", UserGameController.updateUserGame);
+UserGameRouter.put(
+  "/user-game/update/:id",
+  authMiddleware,
+  UserGameController.updateUserGame
+);
 
 UserGameRouter.delete(
   "/user-game/delete/:id",
+  authMiddleware,
   UserGameController.deleteUserGame
 );
 
-UserGameRouter.get("/user-game/:id", UserGameController.findUserGame);
+UserGameRouter.get(
+  "/user-game/:id",
+  authMiddleware,
+  UserGameController.findUserGame
+);
 
 export default UserGameRouter;

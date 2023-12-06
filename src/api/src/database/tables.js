@@ -8,7 +8,7 @@ export const createTables = () => {
 				id varchar(40) PRIMARY KEY NOT NUll,
 				first_name varchar(60) NOT NULL,
 				last_name varchar(60),
-				username varchar(60) NOT NULL,
+				username varchar(60) UNIQUE NOT NULL,
 				email varchar(60) UNIQUE NOT NULL,
 				password varchar(60) NOT NULL,   
 				has_accepted_use_terms varchar(60) NOT NULL

@@ -1,17 +1,22 @@
 import express from "express";
 
 import { GameController } from "../controllers/GameController.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 const GameRouter = express.Router();
 
-GameRouter.get("/game", GameController.listGames);
+GameRouter.get("/game", authMiddleware, GameController.listGames);
 
-GameRouter.post("/game/create", GameController.createGame);
+GameRouter.post("/game/create", authMiddleware, GameController.createGame);
 
-GameRouter.put("/game/update/:id", GameController.updateGame);
+GameRouter.put("/game/update/:id", authMiddleware, GameController.updateGame);
 
-GameRouter.delete("/game/delete/:id", GameController.deleteGame);
+GameRouter.delete(
+  "/game/delete/:id",
+  authMiddleware,
+  GameController.deleteGame
+);
 
-GameRouter.get("/game/:id", GameController.findGame);
+GameRouter.get("/game/:id", authMiddleware, GameController.findGame);
 
 export default GameRouter;

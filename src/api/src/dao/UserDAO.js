@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 import { db } from "../database/config.js";
 
 export class UserDAO {
@@ -8,7 +6,7 @@ export class UserDAO {
       db.run(
         "INSERT INTO users (id, first_name, last_name, username, email, password, has_accepted_use_terms) VALUES (?, ?, ?, ?, ?, ?, ?)",
         [
-          uuidv4(),
+          user.id,
           user.first_name,
           user.last_name,
           user.username,
@@ -84,20 +82,40 @@ export class UserDAO {
     });
   }
 
-  static findById(userId) {
+  static find(params = {}) {
     return new Promise((resolve, reject) => {
-      if (userId == undefined || typeof userId !== "string") {
-        reject(new Error("Invalid user id."));
+      const paramsProperties = Object.entries(params);
+
+      if (!params || !paramsProperties.length) {
+        reject(new Error("Params invalid"));
       }
 
-      db.get("SELECT * FROM users WHERE id = ?", [userId], (error, result) => {
-        if (error) {
-          console.error(error);
-          reject(new Error("User not found"));
-        } else {
-          resolve(result);
+      let whereString = "";
+
+      paramsProperties.map(([key, value], index) => {
+        if (value) {
+          whereString += `${key} = "${value}"`;
+
+          if (
+            paramsProperties.length > 1 &&
+            index !== paramsProperties.length - 1
+          ) {
+            whereString = setSQL.concat(", ");
+          }
         }
       });
+
+      db.get(
+        `SELECT * FROM users WHERE ${whereString}`,
+        [],
+        (error, result) => {
+          if (error) {
+            reject(new Error("User not found"));
+          } else {
+            resolve(result);
+          }
+        }
+      );
     });
   }
 

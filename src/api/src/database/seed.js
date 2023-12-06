@@ -1,13 +1,16 @@
 import { v4 as uuidv4 } from "uuid";
+import bcrypt from "bcryptjs";
 
 import { db } from "./config.js";
 
-export const execSeeds = () => {
+export const execSeeds = async () => {
+  const hardCodedUserPassword = await bcrypt.hash("sotero@123", 10);
+
   db.serialize(() => {
     db.run(
       `
       INSERT INTO users (id, first_name, last_name, username, email, password, has_accepted_use_terms) VALUES 
-        ("2f2faace-2507-4eaa-bcbe-89892307be30", "Matheus", "Santos", "matheusdoe", "matheusdoe@sotero.com", "sotero@123", TRUE), ("ecfd772b-212e-45ba-a5d1-be56a453ec22", "Jailson", NULL, "jailson", "jailson@sotero.com", "sotero@123", TRUE), ("8001e514-7ceb-4661-8cbc-68a22b523cbe", "Henrique", NULL, "henrique", "henrique@sotero.com", "sotero@123", TRUE), ("6cc9657d-ece8-4198-b2bd-8c4625eb9330", "Isac", NULL, "isac", "isac@sotero.com", "sotero@123", TRUE), ("054047ce-8b25-4b88-a873-eaa9e5672883", "Arthur", NULL, "arthur", "arthur@sotero.com", "sotero@123", TRUE), ("d966a661-7912-48a2-adc7-3d8292ef9183", "Fernando", NULL, "fernando", "fernando@sotero.com", "sotero@123", TRUE), ("705845bf-22b8-4cde-b6d1-6ee9838987ea", "Lucas", NULL, "lucas", "lucas@sotero.com", "sotero@123", TRUE), ("973343d5-afbd-4d55-9456-5f76306a13bd", "Marcos", NULL, "marcos", "marcos@sotero.com", "sotero@123", TRUE), ("a5afdf85-356f-4598-bb66-577300037292", "Mauricio", NULL, "mauricio", "mauricio@sotero.com", "sotero@123", TRUE), ("4a685abc-71ac-4bd4-af50-5ae47a159a61", "Gustavo", NULL, "gustavo", "gustavo@sotero.com", "sotero@123", TRUE);
+        ("2f2faace-2507-4eaa-bcbe-89892307be30", "Matheus", "Santos", "matheusdoe", "matheusdoe@sotero.com", "${hardCodedUserPassword}", TRUE), ("ecfd772b-212e-45ba-a5d1-be56a453ec22", "Jailson", NULL, "jailson", "jailson@sotero.com", "${hardCodedUserPassword}", TRUE), ("8001e514-7ceb-4661-8cbc-68a22b523cbe", "Henrique", NULL, "henrique", "henrique@sotero.com", "${hardCodedUserPassword}", TRUE), ("6cc9657d-ece8-4198-b2bd-8c4625eb9330", "Isac", NULL, "isac", "isac@sotero.com", "${hardCodedUserPassword}", TRUE), ("054047ce-8b25-4b88-a873-eaa9e5672883", "Arthur", NULL, "arthur", "arthur@sotero.com", "${hardCodedUserPassword}", TRUE), ("d966a661-7912-48a2-adc7-3d8292ef9183", "Fernando", NULL, "fernando", "fernando@sotero.com", "${hardCodedUserPassword}", TRUE), ("705845bf-22b8-4cde-b6d1-6ee9838987ea", "Lucas", NULL, "lucas", "lucas@sotero.com", "${hardCodedUserPassword}", TRUE), ("973343d5-afbd-4d55-9456-5f76306a13bd", "Marcos", NULL, "marcos", "marcos@sotero.com", "${hardCodedUserPassword}", TRUE), ("a5afdf85-356f-4598-bb66-577300037292", "Mauricio", NULL, "mauricio", "mauricio@sotero.com", "${hardCodedUserPassword}", TRUE), ("4a685abc-71ac-4bd4-af50-5ae47a159a61", "Gustavo", NULL, "gustavo", "gustavo@sotero.com", "${hardCodedUserPassword}", TRUE);
     `
     );
 

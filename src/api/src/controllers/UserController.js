@@ -1,20 +1,6 @@
 import { UserDAO } from "../dao/UserDAO.js";
 
 export class UserController {
-  static async createUser(request, response) {
-    try {
-      const user = request.body;
-
-      await UserDAO.create(user);
-
-      return response
-        .status(201)
-        .json({ message: "User succesfully created", user });
-    } catch (error) {
-      return response.status(400).json({ message: error?.message });
-    }
-  }
-
   static async updateUser(request, response) {
     try {
       const user = request.body;

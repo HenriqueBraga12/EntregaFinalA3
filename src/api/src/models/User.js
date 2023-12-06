@@ -1,4 +1,6 @@
-export class Game {
+import { v4 as uuidv4 } from "uuid";
+
+export class User {
   constructor(
     first_name,
     last_name,
@@ -7,6 +9,7 @@ export class Game {
     password,
     has_accepted_use_terms
   ) {
+    this.id = uuidv4();
     this.first_name = first_name;
     this.last_name = last_name;
     this.username = username;

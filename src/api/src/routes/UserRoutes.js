@@ -6,8 +6,6 @@ const UserRouter = express.Router();
 
 UserRouter.get("/user", UserController.listUsers);
 
-UserRouter.post("/user/create", UserController.createUser);
-
 UserRouter.put("/user/update/:id", UserController.updateUser);
 
 UserRouter.delete("/user/delete/:id", UserController.deleteUser);
