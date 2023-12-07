@@ -18,3 +18,7 @@
   background: #d366e3;
   transition: 0.3s;
 }
+
+.button__loader {
+  padding: 7.8px 0;
+}

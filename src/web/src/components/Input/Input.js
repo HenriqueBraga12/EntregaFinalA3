@@ -6,6 +6,9 @@ export default function Input({
   type = "text",
   placeholder,
   className = "",
+  value,
+  onChange,
+  ...props
 }) {
   return (
     <div className="input__wrapper">
@@ -15,6 +18,9 @@ export default function Input({
         type={type}
         name={name}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        {...props}
       />
     </div>
   );
