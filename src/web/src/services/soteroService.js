@@ -10,6 +10,6 @@ export const soteroService = {
   },
 
   postSignUp(data) {
-    return soteroAPI.post("/sign-up", data);
+    return soteroAPI.post("/signup", data);
   },
 };

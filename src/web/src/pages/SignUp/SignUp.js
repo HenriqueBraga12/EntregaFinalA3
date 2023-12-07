@@ -37,7 +37,10 @@ export default function SignUp() {
     setIsLoading(true);
 
     try {
-      const response = await soteroService.postSignUp(formValues);
+      const response = await soteroService.postSignUp({
+        ...formValues,
+        has_accepted_use_terms: true,
+      });
 
       setAuthToken(response.data.token);
       navigate("/library");
