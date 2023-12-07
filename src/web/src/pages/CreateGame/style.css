@@ -1,0 +1,21 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 64px;
+}
+.form-container h1 {
+  color: #e9e9ea;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 19.8px; /* 82.5% */
+  margin-bottom: 40px;
+}
+
+.form-container__addGamerButton{
+	color:  #D366E3; 
+	font-weight: 600; 
+
+}

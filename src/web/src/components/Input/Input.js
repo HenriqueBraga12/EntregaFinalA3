@@ -8,6 +8,7 @@ export default function Input({
   className = "",
   value,
   onChange,
+  infoText,
   ...props
 }) {
   return (
@@ -22,6 +23,7 @@ export default function Input({
         onChange={onChange}
         {...props}
       />
+      {infoText && <span className='input__infoText'>{infoText}</span>}
     </div>
   );
 }
