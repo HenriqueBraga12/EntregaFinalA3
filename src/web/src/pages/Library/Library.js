@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
 
 import { Logo } from "../../components";
-import { getAuthToken } from "../../functions";
+import { cleanAuthToken, getAuthToken } from "../../functions";
 
 import "./style.css";
+import { toast } from "react-toastify";
 
 export default function Library() {
   const navigate = useNavigate();
@@ -17,11 +19,21 @@ export default function Library() {
     }
   });
 
+  const logout = () => {
+    cleanAuthToken();
+    toast.success("Usuário deslogado.");
+    navigate("/login");
+  };
+
   return (
     <div className="library">
       <div className="library-container">
-        <div className="logo">
+        <div className="library__header">
           <Logo />
+          <button className="logout-button" onClick={logout}>
+            <MdLogout />
+            Encerrar sessão
+          </button>
         </div>
         <div className="AdicionarJogo">
           <Link to="/create-game">+ Adicionar um jogo</Link>

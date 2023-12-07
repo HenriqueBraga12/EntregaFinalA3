@@ -10,7 +10,7 @@ import UserGameRouter from "./routes/UserGameRoutes.js";
 import UserGameCategoryRouter from "./routes/UserGameCategoryRoutes.js";
 import GameCategoryRouter from "./routes/GameCategoryRoutes.js";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3333;
 const app = express();
 
 app.use(cors());
