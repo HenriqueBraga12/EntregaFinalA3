@@ -109,7 +109,7 @@ export class UserDAO {
         `SELECT * FROM users WHERE ${whereString}`,
         [],
         (error, result) => {
-          if (error) {
+          if (error || !result) {
             reject(new Error("User not found"));
           } else {
             resolve(result);
