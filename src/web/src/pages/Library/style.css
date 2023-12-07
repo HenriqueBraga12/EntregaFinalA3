@@ -1,0 +1,26 @@
+.library {
+  background: #1b1e35;
+}
+
+.library-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 180px 128px 32px;
+}
+
+.AdicionarJogo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 64px;
+}
+
+.AdicionarJogo a {
+  color: var(--primary-400, #d366e3);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 19.8px; /* 110% */
+}
