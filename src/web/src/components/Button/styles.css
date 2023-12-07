@@ -1,8 +1,6 @@
 .button {
   border-radius: 4px;
-  background: var(--primary-300, #b847c9);
 
-  color: #fefeff;
   text-align: center;
   font-size: 14px;
   line-height: 1.4em;
@@ -14,8 +12,23 @@
   transition: 0.3s;
 }
 
-.button:hover {
+.button--default {
+  background: #b847c9;
+  color: #fefeff;
+}
+
+.button--secondary {
+  background: #bcbcd1;
+  color: #030102;
+}
+
+.button--default:hover {
   background: #d366e3;
+  transition: 0.3s;
+}
+
+.button--secondary:hover {
+  background: #e9e9ea;
   transition: 0.3s;
 }
 

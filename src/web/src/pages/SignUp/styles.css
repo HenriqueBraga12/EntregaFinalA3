@@ -14,7 +14,7 @@
 }
 
 .sign-up__button {
-  max-width: 346px;
+  max-width: 346px !important;
 }
 
 .sign-up__separator {

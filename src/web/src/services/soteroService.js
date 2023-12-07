@@ -8,4 +8,8 @@ export const soteroService = {
   postLogin(data) {
     return soteroAPI.post("/login", data);
   },
+
+  postSignUp(data) {
+    return soteroAPI.post("/sign-up", data);
+  },
 };

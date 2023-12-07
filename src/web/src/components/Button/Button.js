@@ -6,10 +6,15 @@ export default function Button({
   className = "",
   onClick,
   type = "button",
+  variant = "default",
   isLoading = false,
 }) {
   return (
-    <button type={type} className={`button ${className}`} onClick={onClick}>
+    <button
+      type={type}
+      className={`button button--${variant} ${className}`}
+      onClick={onClick}
+    >
       {isLoading ? (
         <div className="button__loader">
           <Loader color="#E9E9EA" isLoading={true} />
