@@ -1,4 +1,4 @@
-.sign-up__title {
+.login__title {
   color: #e9e9ea;
   text-align: center;
   font-size: 24px;
@@ -9,15 +9,15 @@
   margin-bottom: 32px;
 }
 
-.sign-up__input {
+.login__input {
   margin-bottom: 24px;
 }
 
-.sign-up__button {
+.login__button {
   max-width: 346px;
 }
 
-.sign-up__separator {
+.login__separator {
   color: #e9e9ea;
   font-size: 12px;
   line-height: 1.1em;
@@ -26,7 +26,7 @@
   margin-top: 24px;
 }
 
-.sign-up__link {
+.login__link {
   color: #bcbcd1;
   text-align: center;
   font-size: 14px;
