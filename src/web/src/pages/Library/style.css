@@ -7,7 +7,28 @@
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 32px 180px 128px 32px;
+  padding: 32px 0 128px 0;
+}
+
+.library__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logout-button {
+  color: #bcbcd1;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration-line: underline;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout-button svg {
+  width: 16px;
+  height: 16px;
 }
 
 .AdicionarJogo {
