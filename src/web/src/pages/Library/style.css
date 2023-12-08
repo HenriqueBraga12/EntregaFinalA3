@@ -31,17 +31,65 @@
   height: 16px;
 }
 
-.AdicionarJogo {
+.library__content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 64px;
 }
 
-.AdicionarJogo a {
-  color: var(--primary-400, #d366e3);
+.library__content__no-books {
+  color: #e9e9ea;
   text-align: center;
   font-size: 18px;
-  font-style: normal;
+  line-height: 1.1em;
+  margin-bottom: 24px;
+}
+
+.library__content__add-game {
+  color: #d366e3;
+  text-align: center;
+  font-size: 18px;
   font-weight: 900;
-  line-height: 19.8px; /* 110% */
+  line-height: 1.1em;
+}
+
+.library__content--with-books {
+  align-items: initial;
+}
+
+.library__content__head {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 48px;
+}
+
+.library__content__books {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.library__content__book {
+  display: flex;
+  width: 167px;
+  height: 251px;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.library__content__book > img {
+  width: 167px;
+  height: 251px;
+  object-fit: cover;
+}
+
+.library__content__book > h3 {
+  color: #fefeff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1em;
 }

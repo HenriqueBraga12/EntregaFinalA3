@@ -1,3 +1,4 @@
+import { GameDAO } from "../dao/GameDAO.js";
 import { UserGameDAO } from "../dao/UserGameDAO.js";
 
 export class UserGameController {
@@ -30,7 +31,7 @@ export class UserGameController {
     }
   }
 
-  static async listUserGames(request, response) {
+  static async listAllUserGames(request, response) {
     try {
       const userGames = await UserGameDAO.findAll();
 
@@ -39,7 +40,36 @@ export class UserGameController {
       return response.status(400).json({ message: error?.message });
     }
   }
-  7;
+
+  static async listUserGames(request, response) {
+    try {
+      const userGames = await UserGameDAO.findByUserId(request.userId);
+
+      let userGamesSerialized = [];
+
+      if (userGames instanceof Array) {
+        userGamesSerialized = userGames.map(async (userGame) => {
+          const gameData = await GameDAO.findById(userGame.game_id);
+
+          return {
+            ...userGame,
+            game: gameData,
+          };
+        });
+      } else {
+        const gameData = await GameDAO.findById(userGames.game_id);
+
+        userGamesSerialized.push({
+          ...userGames,
+          game: gameData,
+        });
+      }
+
+      return response.json({ userGames: userGamesSerialized });
+    } catch (error) {
+      return response.status(400).json({ message: error?.message });
+    }
+  }
 
   static async findUserGame(request, response) {
     try {

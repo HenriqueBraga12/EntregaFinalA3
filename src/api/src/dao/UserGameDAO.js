@@ -97,6 +97,26 @@ export class UserGameDAO {
     });
   }
 
+  static findByUserId(userId) {
+    return new Promise((resolve, reject) => {
+      if (userId == undefined || typeof userId !== "string") {
+        reject(new Error("Invalid user id."));
+      }
+
+      db.get(
+        "SELECT * FROM user_game WHERE user_id = ?",
+        [userId],
+        (error, result) => {
+          if (error) {
+            reject(new Error("User game not found"));
+          } else {
+            resolve(result);
+          }
+        }
+      );
+    });
+  }
+
   static deleteById(userGameId) {
     return new Promise((resolve, reject) => {
       if (userGameId == undefined || typeof userGameId !== "string") {

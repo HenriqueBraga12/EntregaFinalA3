@@ -8,6 +8,12 @@ const UserGameRouter = express.Router();
 UserGameRouter.get(
   "/user-game",
   authMiddleware,
+  UserGameController.listAllUserGames
+);
+
+UserGameRouter.get(
+  "/user-game/user",
+  authMiddleware,
   UserGameController.listUserGames
 );
 
