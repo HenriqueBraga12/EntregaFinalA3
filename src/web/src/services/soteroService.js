@@ -12,6 +12,14 @@ export const soteroService = {
     return soteroAPI.post("/signup", data);
   },
 
+  getGames() {
+    return soteroAPI.get("/game", {
+      headers: {
+        Authorization: getAuthToken(),
+      },
+    });
+  },
+
   getUserGames() {
     return soteroAPI.get("/user-game/user", {
       headers: {

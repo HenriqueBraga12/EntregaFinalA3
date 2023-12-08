@@ -29,12 +29,9 @@
 }
 
 .input__infoText {
-  color:  #bcbcd1;
+  color: #bcbcd1;
   font-size: 12px;
-  line-height: 13.2px; /* 110% */
-  margin: 4px 0 24px 0;
+  line-height: 1.1em;
+  margin-top: 4px;
   align-self: flex-start;
 }
-
-
-

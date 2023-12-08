@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  row-gap: 24px;
   width: 100%;
   margin-top: 64px;
 }
+
 .form-container h1 {
   color: #e9e9ea;
   text-align: center;
@@ -14,17 +16,15 @@
   margin-bottom: 40px;
 }
 
-.form-container__addGamerButton{
-	color:  #D366E3; 
-	font-weight: 600; 
+.form-container__addGamerButton {
+  color: #d366e3;
+  font-weight: 600;
 }
 
-.GamerButton{
-	max-width: 346px;
-	margin: 24px 0 24px 0;
-
+.GamerButton {
+  max-width: 346px;
 }
 
-.GamerButton-salvar{
-	max-width: 346px;
+.GamerButton-salvar {
+  max-width: 346px;
 }
