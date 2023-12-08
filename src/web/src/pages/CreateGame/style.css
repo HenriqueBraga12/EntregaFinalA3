@@ -17,5 +17,14 @@
 .form-container__addGamerButton{
 	color:  #D366E3; 
 	font-weight: 600; 
+}
 
+.GamerButton{
+	max-width: 346px;
+	margin: 24px 0 24px 0;
+
+}
+
+.GamerButton-salvar{
+	max-width: 346px;
 }
