@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -15,7 +14,7 @@ export default function BasicSelect({
   infoText,
 }) {
   return (
-    <div className="input__wrapper">
+    <div className={`input__wrapper ${className}`}>
       <label className="input__label" htmlFor={name}>
         {label}
       </label>

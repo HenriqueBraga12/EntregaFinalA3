@@ -5,14 +5,17 @@ import { db } from "../database/config.js";
 export class UserGameDAO {
   static create(userGame) {
     return new Promise((resolve, reject) => {
+      const userGameId = uuidv4();
+
       db.run(
         "INSERT INTO user_game (id, user_id, game_id, grade) VALUES (?, ?, ?, ?)",
-        [uuidv4(), userGame.user_id, userGame.game_id, userGame.grade],
+        [userGameId, userGame.user_id, userGame.game_id, userGame.grade],
         (error) => {
           if (error) {
+            console.error(error);
             reject(new Error("Error on user game creation."));
           } else {
-            resolve();
+            resolve({ userGameId });
           }
         }
       );
@@ -77,35 +80,32 @@ export class UserGameDAO {
     });
   }
 
-  static findById(userGameId) {
+  static find(params = {}) {
     return new Promise((resolve, reject) => {
-      if (userGameId == undefined || typeof userGameId !== "string") {
-        reject(new Error("Invalid user game id."));
+      const paramsProperties = Object.entries(params);
+
+      if (!params || !paramsProperties.length) {
+        reject(new Error("Params invalid"));
       }
 
-      db.get(
-        "SELECT * FROM user_game WHERE id = ?",
-        [userGameId],
-        (error, result) => {
-          if (error) {
-            reject(new Error("User game not found"));
-          } else {
-            resolve(result);
+      let whereString = "";
+
+      paramsProperties.map(([key, value], index) => {
+        if (value) {
+          whereString += `${key} = "${value}"`;
+
+          if (
+            paramsProperties.length > 1 &&
+            index !== paramsProperties.length - 1
+          ) {
+            whereString = whereString.concat(" AND ");
           }
         }
-      );
-    });
-  }
+      });
 
-  static findByUserId(userId) {
-    return new Promise((resolve, reject) => {
-      if (userId == undefined || typeof userId !== "string") {
-        reject(new Error("Invalid user id."));
-      }
-
-      db.get(
-        "SELECT * FROM user_game WHERE user_id = ?",
-        [userId],
+      db.all(
+        `SELECT * FROM user_game WHERE ${whereString}`,
+        [],
         (error, result) => {
           if (error) {
             reject(new Error("User game not found"));

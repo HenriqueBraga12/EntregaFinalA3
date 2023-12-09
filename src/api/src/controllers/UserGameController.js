@@ -3,14 +3,29 @@ import { UserGameDAO } from "../dao/UserGameDAO.js";
 
 export class UserGameController {
   static async createUserGame(request, response) {
+    const userGame = request.body;
+    const user_id = request.userId;
+
+    const isGameAlreadyInUserLibrary = await UserGameDAO.find({
+      game_id: userGame.game_id,
+      user_id,
+    });
+
     try {
-      const userGame = request.body;
+      if (isGameAlreadyInUserLibrary?.length) {
+        throw new Error("Este jogo já está adicionado na biblioteca.");
+      }
 
-      await UserGameDAO.create(userGame);
+      const { userGameId } = await UserGameDAO.create({
+        ...userGame,
+        user_id,
+      });
 
-      return response
-        .status(201)
-        .json({ message: "User game created succesfully.", userGame });
+      return response.status(201).json({
+        message: "User game created succesfully.",
+        userGame,
+        userGameId,
+      });
     } catch (error) {
       return response.status(400).json({ message: error?.message });
     }
@@ -43,27 +58,16 @@ export class UserGameController {
 
   static async listUserGames(request, response) {
     try {
-      const userGames = await UserGameDAO.findByUserId(request.userId);
+      const userGames = await UserGameDAO.find({ user_id: request.userId });
 
-      let userGamesSerialized = [];
-
-      if (userGames instanceof Array) {
-        userGamesSerialized = userGames.map(async (userGame) => {
-          const gameData = await GameDAO.findById(userGame.game_id);
-
-          return {
+      const userGamesSerialized = await Promise.all(
+        userGames.map((userGame) => {
+          return GameDAO.findById(userGame.game_id).then((r) => ({
             ...userGame,
-            game: gameData,
-          };
-        });
-      } else {
-        const gameData = await GameDAO.findById(userGames.game_id);
-
-        userGamesSerialized.push({
-          ...userGames,
-          game: gameData,
-        });
-      }
+            game: r,
+          }));
+        })
+      );
 
       return response.json({ userGames: userGamesSerialized });
     } catch (error) {
@@ -74,7 +78,7 @@ export class UserGameController {
   static async findUserGame(request, response) {
     try {
       const userGameId = request.params.id;
-      const userGame = await UserGameDAO.findById(userGameId);
+      const userGame = await UserGameDAO.find({ id: userGameId });
 
       return response.json({ userGame });
     } catch (error) {

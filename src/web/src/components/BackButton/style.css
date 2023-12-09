@@ -1,17 +1,16 @@
 .MdArrowBack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
   color: #e9e9ea;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 19.8px; /* 82.5% */
+  font-size: 16px;
+  line-height: 1.1em;
   margin-top: 64px;
-  border: #B847C9 2px solid ;
-  border-radius: 20px;
-  padding: 3px;
+  transition: 0.3s;
 }
 
 .MdArrowBack:hover {
-	transition: 1s;
-	background-color: #e9e9ea;
-	color: #B847C9;
+  transition: 0.3s;
+  color: #b847c9;
 }

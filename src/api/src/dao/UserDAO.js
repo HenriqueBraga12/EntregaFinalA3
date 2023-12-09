@@ -60,7 +60,6 @@ export class UserDAO {
 
       db.run(`UPDATE users SET ${setSQL} WHERE id = ?`, [userId], (error) => {
         if (error) {
-          console.error(error);
           reject(new Error("Error on user creation."));
         } else {
           resolve();
@@ -100,7 +99,7 @@ export class UserDAO {
             paramsProperties.length > 1 &&
             index !== paramsProperties.length - 1
           ) {
-            whereString = setSQL.concat(", ");
+            whereString = whereString.concat(" AND ");
           }
         }
       });
