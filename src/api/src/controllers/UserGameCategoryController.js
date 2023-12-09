@@ -41,14 +41,13 @@ export class UserGameCategoryController {
       return response.status(400).json({ message: error?.message });
     }
   }
-  7;
 
   static async findUserGameCategory(request, response) {
     try {
       const userGameCategoryId = request.params.id;
-      const userGameCategory = await UserGameCategoryDAO.findById(
-        userGameCategoryId
-      );
+      const userGameCategory = (
+        await UserGameCategoryDAO.find(userGameCategoryId)
+      )[0];
 
       return response.json({ userGameCategory });
     } catch (error) {

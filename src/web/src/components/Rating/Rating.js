@@ -10,10 +10,11 @@ export default function RatingComponent({
   max = 5,
   value,
   onChange,
+  readOnly = false,
 }) {
   return (
     <div className="rating">
-      <label className="input__label">{label}</label>
+      {label && <label className="input__label">{label}</label>}
       <Box
         sx={{
           "& > legend": { mt: 2 },
@@ -26,6 +27,7 @@ export default function RatingComponent({
           onChange={onChange}
           value={value}
           precision={0.5}
+          readOnly={readOnly}
         />
       </Box>
     </div>

@@ -45,6 +45,14 @@ export const soteroService = {
     return soteroAPI.get("/user-game/user");
   },
 
+  getUserGame(userGameId) {
+    return soteroAPI.get(`/user-game/${userGameId}`);
+  },
+
+  deleteUserGame(userGameId) {
+    return soteroAPI.delete(`/user-game/delete/${userGameId}`);
+  },
+
   getGameCategories() {
     return soteroAPI.get("/game-category");
   },

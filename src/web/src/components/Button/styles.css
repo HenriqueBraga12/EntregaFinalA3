@@ -22,6 +22,11 @@
   color: #030102;
 }
 
+.button--warning {
+  background: #eb5757;
+  color: #fefeff;
+}
+
 .button--default:hover {
   background: #d366e3;
   transition: 0.3s;
@@ -30,6 +35,10 @@
 .button--secondary:hover {
   background: #e9e9ea;
   transition: 0.3s;
+}
+
+.button--warning:hover {
+  filter: brightness(1.2);
 }
 
 .button__loader {

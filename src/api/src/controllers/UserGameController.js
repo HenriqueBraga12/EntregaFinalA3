@@ -1,4 +1,6 @@
 import { GameDAO } from "../dao/GameDAO.js";
+import { GameCategoryDAO } from "../dao/GameCategoryDAO.js";
+import { UserGameCategoryDAO } from "../dao/UserGameCategoryDAO.js";
 import { UserGameDAO } from "../dao/UserGameDAO.js";
 
 export class UserGameController {
@@ -78,9 +80,32 @@ export class UserGameController {
   static async findUserGame(request, response) {
     try {
       const userGameId = request.params.id;
-      const userGame = await UserGameDAO.find({ id: userGameId });
+      const userGame = (await UserGameDAO.find({ id: userGameId }))[0];
 
-      return response.json({ userGame });
+      const gameData = await GameDAO.findById(userGame.game_id);
+
+      const categories = await UserGameCategoryDAO.find({
+        user_game_id: userGameId,
+      });
+
+      const categoriesSerialized = await Promise.all(
+        categories.map((category) => {
+          return GameCategoryDAO.findById(category.game_category_id).then(
+            (r) => ({
+              ...category,
+              ...r,
+            })
+          );
+        })
+      );
+
+      return response.json({
+        userGame: {
+          ...userGame,
+          ...gameData,
+          categories: categoriesSerialized,
+        },
+      });
     } catch (error) {
       return response.status(400).json({ message: error?.message });
     }

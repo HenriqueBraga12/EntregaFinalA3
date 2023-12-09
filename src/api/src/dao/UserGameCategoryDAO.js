@@ -88,18 +88,32 @@ export class UserGameCategoryDAO {
     });
   }
 
-  static findById(userGameCategoryId) {
+  static find(params = {}) {
     return new Promise((resolve, reject) => {
-      if (
-        userGameCategoryId == undefined ||
-        typeof userGameCategoryId !== "string"
-      ) {
-        reject(new Error("Invalid user game category id."));
+      const paramsProperties = Object.entries(params);
+
+      if (!params || !paramsProperties.length) {
+        reject(new Error("Params invalid"));
       }
 
-      db.get(
-        "SELECT * FROM user_game_categories WHERE id = ?",
-        [userGameCategoryId],
+      let whereString = "";
+
+      paramsProperties.map(([key, value], index) => {
+        if (value) {
+          whereString += `${key} = "${value}"`;
+
+          if (
+            paramsProperties.length > 1 &&
+            index !== paramsProperties.length - 1
+          ) {
+            whereString = whereString.concat(" AND ");
+          }
+        }
+      });
+
+      db.all(
+        `SELECT * FROM user_game_categories WHERE ${whereString}`,
+        [],
         (error, result) => {
           if (error) {
             reject(new Error("User game category not found"));

@@ -40,7 +40,7 @@ export default function Library() {
   };
 
   const handleLibrary = () =>
-    !userGames || !userGames.length ? (
+    !userGames?.length ? (
       <div className="library__content">
         <p className="library__content__no-books">
           Não há jogos na sua biblioteca.
@@ -64,20 +64,20 @@ export default function Library() {
     userGames.map((userGame) => {
       const gameCoverImg = userGame.game.cover_url ?? DefaultGameImg;
 
-      const handleOnImgError = () => {
-        if (this.src != DefaultGameImg) this.src = DefaultGameImg;
+      const goToGamePage = () => {
+        navigate(`/game/${userGame.id}`);
       };
 
       return (
-        <article className="library__content__book" key={userGame.id}>
+        <button
+          onClick={goToGamePage}
+          className="library__content__book"
+          key={userGame.id}
+        >
           {console.log(userGame.game.cover_url)}
-          <img
-            src={gameCoverImg}
-            alt={userGame.game.name}
-            onError={handleOnImgError}
-          />
+          <img src={gameCoverImg} alt={userGame.game.name} />
           <h3>{userGame.game.name}</h3>
-        </article>
+        </button>
       );
     });
 
