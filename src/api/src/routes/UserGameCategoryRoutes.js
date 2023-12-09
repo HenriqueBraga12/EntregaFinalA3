@@ -26,7 +26,7 @@ UserGameCategoryRouter.put(
 UserGameCategoryRouter.delete(
   "/user-game-category/delete/:id",
   authMiddleware,
-  UserGameCategoryController.deleteUserGameCategory
+  UserGameCategoryController.deleteUserGameCategories
 );
 
 UserGameCategoryRouter.get(

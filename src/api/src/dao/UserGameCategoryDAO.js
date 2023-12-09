@@ -125,7 +125,7 @@ export class UserGameCategoryDAO {
     });
   }
 
-  static deleteById(userGameCategoryId) {
+  static deleteAllByUserGameId(userGameCategoryId) {
     return new Promise((resolve, reject) => {
       if (
         userGameCategoryId == undefined ||
@@ -135,7 +135,7 @@ export class UserGameCategoryDAO {
       }
 
       db.run(
-        "DELETE FROM user_game_categories WHERE id = ?",
+        "DELETE FROM user_game_categories WHERE user_game_id = ?",
         [userGameCategoryId],
         (error) => {
           if (error) {

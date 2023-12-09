@@ -19,7 +19,7 @@ export default function MultiSelectComponent({
   label,
   setValue,
   value = [],
-  options,
+  options = [],
 }) {
   const handleChange = (event) => {
     const {
@@ -30,15 +30,19 @@ export default function MultiSelectComponent({
   };
 
   const handleRenderValue = (selected) => {
+    if (!options || !options.find) {
+      return "";
+    }
+
     return selected
       .map(
         (selectedItem) =>
-          options.find((option) => option.value === selectedItem).name
+          options?.find((option) => option.value === selectedItem).name
       )
       .join(", ");
   };
 
-  const handleOptions = options.map(({ name, value: optionValue }) => (
+  const handleOptions = options?.map(({ name, value: optionValue }) => (
     <MenuItem key={optionValue} value={optionValue}>
       <ListItemText primary={name} />
     </MenuItem>

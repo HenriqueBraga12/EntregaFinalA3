@@ -12,6 +12,7 @@ export default function BasicSelect({
   onChange,
   options = [],
   infoText,
+  disabled,
 }) {
   return (
     <div className={`input__wrapper ${className}`}>
@@ -19,7 +20,13 @@ export default function BasicSelect({
         {label}
       </label>
       <FormControl fullWidth>
-        <Select labelId={name} id={name} value={value} onChange={onChange}>
+        <Select
+          labelId={name}
+          id={name}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+        >
           {options.map(({ name, value }) => (
             <MenuItem key={value} value={value}>
               {name}

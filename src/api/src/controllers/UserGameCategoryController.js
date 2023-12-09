@@ -55,14 +55,14 @@ export class UserGameCategoryController {
     }
   }
 
-  static async deleteUserGameCategory(request, response) {
+  static async deleteUserGameCategories(request, response) {
     try {
-      const userGameCategoryId = request.params.id;
+      const userGameId = request.params.id;
 
-      await UserGameCategoryDAO.deleteById(userGameCategoryId);
+      await UserGameCategoryDAO.deleteAllByUserGameId(userGameId);
 
       return response.json({
-        message: "User game category was succesfully deleted.",
+        message: "User game categories was succesfully deleted.",
       });
     } catch (error) {
       return response.status(400).json({ message: error?.message });

@@ -15,3 +15,8 @@
 .MuiSvgIcon-root {
   color: #bcbcd1 !important;
 }
+
+.Mui-disabled {
+  color: #bcbcd144 !important;
+  -webkit-text-fill-color: #bcbcd199 !important;
+}

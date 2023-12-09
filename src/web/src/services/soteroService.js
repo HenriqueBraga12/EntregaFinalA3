@@ -61,6 +61,14 @@ export const soteroService = {
     return soteroAPI.post("/user-game/create", data);
   },
 
+  putCreateUserGame(data, userGameId) {
+    return soteroAPI.put(`/user-game/update/${userGameId}`, data);
+  },
+
+  deleteUserGameCategories(userGameId) {
+    return soteroAPI.delete(`/user-game-category/delete/${userGameId}`);
+  },
+
   postAddUserGameCategory(data) {
     return soteroAPI.post("/user-game-category/create", data);
   },

@@ -74,6 +74,12 @@ export default function CreateGame() {
 
       if (!isAddAnotherGame) {
         navigate("/library");
+      } else {
+        setFormValues({
+          game_id: "",
+          grade: null,
+        });
+        setGameCategories([]);
       }
     } catch (error) {
       if (

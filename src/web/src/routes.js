@@ -1,6 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { Home, Library, SignUp, CreateGame, Login, Game } from "./pages";
+import {
+  Home,
+  Library,
+  SignUp,
+  CreateGame,
+  Login,
+  Game,
+  EditGame,
+} from "./pages";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +26,10 @@ export const router = createBrowserRouter([
   {
     path: "/create-game",
     element: <CreateGame />,
+  },
+  {
+    path: "/edit-game/:gameId",
+    element: <EditGame />,
   },
   {
     path: "/login",
