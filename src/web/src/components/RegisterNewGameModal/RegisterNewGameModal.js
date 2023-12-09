@@ -55,7 +55,6 @@ export default function RegisterNewGameModal() {
         onChange={handleChangeRegisterGame("name")}
         required
       />
-      {console.log(registerGameFormValues)}
 
       <Input
         type="url"

@@ -74,7 +74,6 @@ export default function Library() {
           className="library__content__book"
           key={userGame.id}
         >
-          {console.log(userGame.game.cover_url)}
           <img src={gameCoverImg} alt={userGame.game.name} />
           <h3>{userGame.game.name}</h3>
         </button>
