@@ -111,7 +111,7 @@ export default function Game() {
 
             {game?.abstract && (
               <div className="game-info__item">
-                <span className="game-info__item__label">Status</span>
+                <span className="game-info__item__label">Resumo</span>
                 <p className="game-info__item__value--abstract">
                   {game.abstract}
                 </p>

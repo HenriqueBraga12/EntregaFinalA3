@@ -9,9 +9,12 @@ import {
   Select,
   Rating,
   MultiSelect,
+  Input,
+  Textarea,
+  RegisterNewGameModal,
 } from "../../components";
-
 import { getAuthToken } from "../../functions";
+import { useModal } from "../../providers";
 import { soteroService } from "../../services/soteroService";
 
 import "./style.css";
@@ -35,6 +38,20 @@ export default function CreateGame() {
   });
   const [gameCategories, setGameCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  async function fetchGames() {
+    const response = await soteroService.getGames();
+
+    setGameOptions(
+      response?.data?.games.map(({ id, name }) => ({ name, value: id }))
+    );
+  }
+
+  const { handleOpen, isOpen } = useModal();
+
+  const handleOpenRegisterGameModal = () => {
+    handleOpen(<RegisterNewGameModal />);
+  };
 
   const handleChangeForm = (key) => (event) => {
     setFormValues({ ...formValues, [key]: event.target.value });
@@ -100,14 +117,6 @@ export default function CreateGame() {
   };
 
   useEffect(() => {
-    async function fetchGames() {
-      const response = await soteroService.getGames();
-
-      setGameOptions(
-        response?.data?.games.map(({ id, name }) => ({ name, value: id }))
-      );
-    }
-
     async function fetchCategories() {
       const response = await soteroService.getGameCategories();
 
@@ -121,7 +130,7 @@ export default function CreateGame() {
 
     fetchGames();
     fetchCategories();
-  }, []);
+  }, [isOpen]);
 
   return (
     <div className="library">
@@ -139,7 +148,11 @@ export default function CreateGame() {
             infoText={
               <>
                 O jogo que você quer adicionar não existe?{" "}
-                <button className="form-container__addGamerButton">
+                <button
+                  type="button"
+                  onClick={handleOpenRegisterGameModal}
+                  className="form-container__addGamerButton"
+                >
                   Cadastre aqui
                 </button>
               </>

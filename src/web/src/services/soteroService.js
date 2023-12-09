@@ -41,6 +41,10 @@ export const soteroService = {
     return soteroAPI.get("/game");
   },
 
+  postGame(data) {
+    return soteroAPI.post("/game/create", data);
+  },
+
   getUserGames() {
     return soteroAPI.get("/user-game/user");
   },

@@ -6,7 +6,7 @@ export class GameDAO {
   static create(game) {
     return new Promise((resolve, reject) => {
       db.run(
-        "INSERT INTO games (id, name, release_date, abstract, developer, publisher) VALUES (?, ?, ?, ?, ?, ?)",
+        "INSERT INTO games (id, name, release_date, abstract, developer, publisher, cover_url) VALUES (?, ?, ?, ?, ?, ?, ?)",
         [
           uuidv4(),
           game.name,
@@ -14,6 +14,7 @@ export class GameDAO {
           game.abstract,
           game.developer,
           game.publisher,
+          game.cover_url,
         ],
         (error) => {
           if (error) {

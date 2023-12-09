@@ -12,8 +12,8 @@
   text-align: center;
   font-size: 24px;
   font-weight: 900;
-  line-height: 19.8px; /* 82.5% */
-  margin-bottom: 40px;
+  line-height: 1.1em;
+  margin-bottom: 8px;
 }
 
 .form-container__addGamerButton {
@@ -27,4 +27,21 @@
 
 .GamerButton-salvar {
   max-width: 346px;
+}
+
+.register-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+}
+
+.register-game__title {
+  margin-bottom: 8px;
+
+  color: #e9e9ea;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1em;
 }

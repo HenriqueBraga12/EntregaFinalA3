@@ -30,7 +30,7 @@ export default function MultiSelectComponent({
   };
 
   const handleRenderValue = (selected) => {
-    if (!options || !options.find) {
+    if (!options || !options.length) {
       return "";
     }
 

@@ -1,9 +1,6 @@
-import "./styles.css";
-
-export default function Input({
+export default function Textarea({
   label,
   name,
-  type = "text",
   placeholder,
   className = "",
   value,
@@ -14,9 +11,8 @@ export default function Input({
   return (
     <div className="input__wrapper">
       <label className="input__label">{label}</label>
-      <input
-        className={`input__field ${className}`}
-        type={type}
+      <textarea
+        className={`input__field input__field--textarea ${className}`}
         name={name}
         placeholder={placeholder}
         value={value}
