@@ -9,8 +9,6 @@ import {
   Select,
   Rating,
   MultiSelect,
-  Input,
-  Textarea,
   RegisterNewGameModal,
 } from "../../components";
 import { getAuthToken } from "../../functions";

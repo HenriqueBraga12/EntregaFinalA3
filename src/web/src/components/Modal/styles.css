@@ -29,3 +29,17 @@
   flex-direction: column;
   row-gap: 24px;
 }
+
+@media (max-width: 1050px) {
+  .modal__overlay {
+    height: 100%;
+  }
+
+  .modal__content {
+    padding: 36px 24px;
+    max-width: 350px;
+    width: 100%;
+    background: #363753;
+    margin-left: -175px;
+  }
+}
