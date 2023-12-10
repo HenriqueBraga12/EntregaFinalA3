@@ -34,3 +34,29 @@
   text-decoration-line: underline;
   margin-bottom: 24px;
 }
+
+@media (max-width: 576px) {
+  .login__title {
+    color: #e9e9ea;
+    font-size: 18px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .login__input {
+    margin-bottom: 16px;
+  }
+
+  .login__button {
+    max-width: 360px !important;
+  }
+
+  .login__separator {
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  .login__link {
+    margin-bottom: 16px;
+  }
+}

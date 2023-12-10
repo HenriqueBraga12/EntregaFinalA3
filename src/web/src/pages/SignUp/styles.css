@@ -34,3 +34,29 @@
   text-decoration-line: underline;
   margin-bottom: 24px;
 }
+
+@media (max-width: 576px) {
+  .sign-up__title {
+    color: #e9e9ea;
+    font-size: 18px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .sign-up__input {
+    margin-bottom: 16px;
+  }
+
+  .sign-up__button {
+    max-width: 360px !important;
+  }
+
+  .sign-up__separator {
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  .sign-up__link {
+    margin-bottom: 16px;
+  }
+}
