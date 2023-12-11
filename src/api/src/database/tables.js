@@ -8,7 +8,7 @@ export const createTables = () => {
 				id varchar(40) PRIMARY KEY NOT NUll,
 				first_name varchar(60) NOT NULL,
 				last_name varchar(60),
-				username varchar(60) NOT NULL,
+				username varchar(60) UNIQUE NOT NULL,
 				email varchar(60) UNIQUE NOT NULL,
 				password varchar(60) NOT NULL,   
 				has_accepted_use_terms varchar(60) NOT NULL
@@ -31,6 +31,7 @@ export const createTables = () => {
 			  CREATE TABLE IF NOT EXISTS games (
 				id varchar(40) PRIMARY KEY NOT NUll,
 				name varchar(60) UNIQUE NOT NULL,
+				cover_url varchar(255),
 				release_date varchar(255),
 				abstract varchar(255),
 				developer varchar(60),
