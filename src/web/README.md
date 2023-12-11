@@ -30,6 +30,8 @@ REACT_APP_API_URL=http://localhost:3333
 
 ```sh
 npm start
+
+yarn start
 ```
 
 ## Technologias utilizadas
