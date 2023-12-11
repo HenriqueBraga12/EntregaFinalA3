@@ -49,3 +49,17 @@
 .dialog__modal__buttons__button {
   max-width: 120px;
 }
+
+@media (max-width: 1050px) {
+  .dialog__overlay {
+    height: 150vh;
+  }
+
+  .dialog__modal {
+    padding: 36px 24px;
+    max-width: 350px;
+    width: 100%;
+    background: #363753;
+    margin-left: -175px;
+  }
+}
