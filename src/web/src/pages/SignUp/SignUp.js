@@ -36,6 +36,11 @@ export default function SignUp() {
     event.preventDefault();
     setIsLoading(true);
 
+    if(formValues.password.length<8){
+      toast.error("Inválido!\nSenha precisa ter ao menos 8 caracteres")
+      setIsLoading(false)
+      return
+    }
     try {
       const response = await soteroService.postSignUp({
         ...formValues,

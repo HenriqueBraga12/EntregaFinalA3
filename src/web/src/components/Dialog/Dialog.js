@@ -15,6 +15,7 @@ export default function Dialog({
     isOpen && (
       <>
         <div className="dialog__overlay" onClick={handleClose}></div>
+        {console.log(isOpen)}
         <div className="dialog__modal">
           <h3 className="dialog__modal__title">{title}</h3>
           <p className="dialog__modal__content">{content}</p>

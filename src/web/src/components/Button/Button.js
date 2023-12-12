@@ -1,5 +1,4 @@
 import Loader from "../Loader";
-
 import "./styles.css";
 
 export default function Button({
