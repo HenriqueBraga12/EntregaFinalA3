@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import DefaultGameImg from "../../assets/images/user-game-default.jpg";
 import { BackButton, Button, Logo, Rating } from "../../components";
@@ -8,7 +9,6 @@ import { useDialog } from "../../providers/dialogProvider";
 import { soteroService } from "../../services";
 
 import "./styles.css";
-import { toast } from "react-toastify";
 
 export default function Game() {
   const navigate = useNavigate();
@@ -86,7 +86,7 @@ export default function Game() {
                 <h3 className="game-info__item__value">{game.developer}</h3>
               </div>
             )}
-            {game?.grade && (
+            {!!game?.grade && (
               <div className="game-info__item">
                 <span className="game-info__item__label">Sua avaliação</span>
                 <Rating value={game.grade} readOnly={true} />
