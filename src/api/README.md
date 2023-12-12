@@ -31,7 +31,21 @@ JWT_SECRET="8b20a05a5c63fc495616095087ac74f2"
 BCRYPT_SALT=10
 ```
 
-### 2. Iniciando projeto
+### 2. Criando tabelas e pré populando o banco de dados
+
+```sh
+npm run db:seed
+
+yarn db:seed
+```
+
+### 3. Iniciando projeto
+
+```sh
+npm run dev
+
+yarn dev
+```
 
 ```sh
 npm start
@@ -41,7 +55,7 @@ yarn start
 
 ## Consultando Documentação Com Os Endpoints
 
-- Para consultar a documentação da API é necessário instalar no Insomnia e importar o arquivo sotero-api-docs.json, ou instalar o Postman e importar o arquivo sotero-api-docs.postman_collection.json.
+- Para consultar a documentação da API é necessário instalar o Insomnia e importar o arquivo sotero-api-docs.json, ou instalar o Postman e importar o arquivo sotero-api-docs.postman_collection.json.
 
 ## Technologias utilizadas
 
