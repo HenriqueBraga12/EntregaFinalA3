@@ -23,8 +23,8 @@ yarn
 ### 1. Configurando variaveis de ambiente
 
 ```env
-JWT_SECRET=
-BCRYPT_SALT=
+JWT_SECRET="8b20a05a5c63fc495616095087ac74f2"
+BCRYPT_SALT=10
 ```
 
 ### 2. Iniciando projeto
@@ -34,6 +34,10 @@ npm start
 
 yarn start
 ```
+
+## Consultando Documentação Com Os Endpoints
+
+- Para consultar a documentação da API é necessário instalar no Insomnia e importar o arquivo sotero-api-docs.json, ou instalar o Postman e importar o arquivo sotero-api-docs.postman_collection.json.
 
 ## Technologias utilizadas
 
