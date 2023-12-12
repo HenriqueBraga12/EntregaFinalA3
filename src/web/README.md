@@ -12,6 +12,8 @@ git clone git@github.com:HenriqueBraga12/EntregaP1A3.git
 
 ### 2. Baixando dependências
 
+- Obs: É preciso ter o Node.js na versão LTS mais recente instalado.
+
 ```sh
 npm install
 
@@ -21,6 +23,8 @@ yarn
 ## Iniciando o Projeto
 
 ### 1. Configurando variaveis de ambiente
+
+- Basta criar o arquivo .env na raiz do projeto (src/web) e inserir as varíaveis abaixo.
 
 ```env
 REACT_APP_API_URL=http://localhost:3333
