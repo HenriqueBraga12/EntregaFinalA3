@@ -86,8 +86,7 @@ export default function Game() {
                 <h3 className="game-info__item__value">{game.developer}</h3>
               </div>
             )}
-
-            {game?.grade && game.grade > 0 && (
+            {game?.grade && (
               <div className="game-info__item">
                 <span className="game-info__item__label">Sua avaliação</span>
                 <Rating value={game.grade} readOnly={true} />
