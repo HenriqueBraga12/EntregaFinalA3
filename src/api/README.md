@@ -12,6 +12,8 @@ git clone git@github.com:HenriqueBraga12/EntregaP1A3.git
 
 ### 2. Baixando dependências
 
+- Obs: É preciso ter a versão LTS mais recente do Node.js instalado.
+
 ```sh
 npm install
 
@@ -21,6 +23,8 @@ yarn
 ## Iniciando o Projeto
 
 ### 1. Configurando variaveis de ambiente
+
+- Basta criar o arquivo .env na raiz do projeto (src/api) e inserir as varíaveis abaixo.
 
 ```env
 JWT_SECRET="8b20a05a5c63fc495616095087ac74f2"
